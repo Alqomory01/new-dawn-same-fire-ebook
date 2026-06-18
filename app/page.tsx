@@ -18,41 +18,39 @@ const dancing = Dancing_Script({ subsets: ["latin"], weight: ["400", "700"] });
 const sora = Sora({ subsets: ["latin"], weight: ["400", "700"] });
 const fruances = Fraunces({
   subsets: ["latin"],
-  weight: ["300", "400", "700"], // choose weights you need
+  weight: ["300", "400", "600"], // include 600 for SemiBold
 });
 
 export default function Home() {
   const pdfUrl = "ebook.pdf"
   return (
     <>
-    <header className={` bg-[#F9F5EE] ${fruances.className} flex items-center px-8 py-4 justify-between `}>
-      <nav className="flex gap-5 ml-72 ">
-        <Link href="#about" className="text-[#88631A]">About</Link>
-        <Link href="#about">What's Inside </Link>
-        <Link href="#about">Message</Link>
-        
-        </nav>  
-      <button className= "flex items-center gap-3 bg-[#260406] mr-20  rounded text-white px-4 py-2 hover:bg-[#260406] "> <span><FaDownload /></span> <span >Download Ebook</span></button>
-      </header>
+    <header className={` bg-[#F9F5EE] ${fruances.className} flex items-center px-8 py-4 `}>
+      <nav className="flex gap-5 flex-1 justify-center ">
+        <Link href="#about" className="text-[#555555]">About</Link>
+        <Link href="#about" className="text-[#555555]">What's Inside</Link>
+        <Link href="#about" className="text-[#555555]">Message</Link>
+      </nav>  
+      <button className= "flex items-center gap-3 bg-[#260406] rounded text-white px-4 py-2 hover:bg-[#260406] "> <span><FaDownload /></span> <span >Download Ebook</span></button>
+    </header>
+    
       <main className="flex flex-col items-center ">
-      <div className=" mt-30 flex items-center gap-3 bg-white px-4 py-2 rounded shadow">
+      <div className="mt-30 flex h-[36px] w-[232px] items-center justify-center gap-[2px] whitespace-nowrap rounded-[30px] border border-[#E5E7EB] bg-white px-[25px] py-[6px]">
       <span className={`${dancing.className} text-green-600 italic font-dancing`}>
         Exclusive Access
       </span>
       <span className="text-[#C0840B80]"><IoIosStar /></span ><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span>
     </div>
-      <h1 className={fruances.className}><span className="text-[#0F172A] text-4xl font-black">NEW DAWN,</span> <span className="text-[#C0840B] text-4xl font-black" >SAME FIRE</span></h1>
-      <p className="mt-2 text-lg">A journey of unfiltered grace</p>
-      <p className="mt-4">Thank you for being part of this special celebration. As a token of appreciation, please enjoy this complimentary copy of New Dawn, Same Fire.</p>
+      <h1 className={`${fruances.className} text-[72px] leading-[72px] text-center`}><span className="text-[#0F172A]">NEW DAWN,</span> <span className="text-[#C0840B]"><i>SAME FIRE</i></span></h1>
+      <p className={`${sora.className} mt-4 text-[#555555]`}>Thank you for being part of this special celebration. As a token of appreciation, please enjoy this complimentary copy of New Dawn, Same Fire.</p>
 
-      <div className="mt-6 flex gap-4">
+      <div className={`mt-6 flex gap-4 ${fruances.className}`}>
+        <button className="bg-[#C0840B] flex ietms-center gap-4  text-[#260406] px-7 py-4 rounded">
+        <span><MdQrCodeScanner/></span><span className="text-[#FFFFFF]">Scan QR for free soft copy</span>
+        </button>
         <button className="bg-[#260406] flex gap-4 text-white px-7 py-4 rounded">
         <span><FaDownload /></span> <span>Request A free hard Copy</span>
         </button>
-        <button className="bg-[#E6E6E6] flex ietms-center gap-4  text-[#260406] px-7 py-4 rounded">
-        <span><MdQrCodeScanner /></span> <span>Scan QR for free soft copy</span>
-        </button>
-       
       </div>
       <div className=" relative w-full h-[200vh]">
       <Image
