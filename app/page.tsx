@@ -25,13 +25,15 @@ export default function Home() {
   const pdfUrl = "ebook.pdf"
   return (
     <>
-    <header className={` bg-[#F9F5EE] ${fruances.className} flex items-center px-8 py-4 `}>
+    <header className={` bg-[#F9F5EE] ${fruances.className} flex items-center px-8 py-4`}>
       <nav className="flex gap-5 flex-1 justify-center ">
         <Link href="#about" className="text-[#555555]">About</Link>
         <Link href="#about" className="text-[#555555]">What's Inside</Link>
         <Link href="#about" className="text-[#555555]">Message</Link>
       </nav>  
-      <button className= "flex items-center gap-3 bg-[#260406] rounded text-white px-4 py-2 hover:bg-[#260406] "> <span><FaDownload /></span> <span >Download Ebook</span></button>
+      <button className="bg-[#C0840B] flex items-center gap-4 text-white px-7 py-4 rounded md:mr-16">
+        <span><MdQrCodeScanner/></span><span className="text-[#FFFFFF]">Scan QR for free soft copy</span>
+      </button>
     </header>
     
       <main className="flex flex-col items-center ">
@@ -41,14 +43,16 @@ export default function Home() {
       </span>
       <span className="text-[#C0840B80]"><IoIosStar /></span ><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span>
     </div>
+    <div>
       <h1 className={`${fruances.className} text-[72px] leading-[72px] text-center`}><span className="text-[#0F172A]">NEW DAWN,</span> <span className="text-[#C0840B]"><i>SAME FIRE</i></span></h1>
       <p className={`${sora.className} mt-4 text-[#555555]`}>Thank you for being part of this special celebration. As a token of appreciation, please enjoy this complimentary copy of New Dawn, Same Fire.</p>
+    </div>
 
       <div className={`mt-6 flex gap-4 ${fruances.className}`}>
-        <button className="bg-[#C0840B] flex ietms-center gap-4  text-[#260406] px-7 py-4 rounded">
+        <button className="bg-[#C0840B] flex items-center gap-4 text-white px-7 py-4 rounded">
         <span><MdQrCodeScanner/></span><span className="text-[#FFFFFF]">Scan QR for free soft copy</span>
         </button>
-        <button className="bg-[#260406] flex gap-4 text-white px-7 py-4 rounded">
+        <button className="bg-[#260406] flex items-center gap-4 text-white px-7 py-4 rounded">
         <span><FaDownload /></span> <span>Request A free hard Copy</span>
         </button>
       </div>
