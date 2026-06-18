@@ -56,25 +56,25 @@ export default function Home() {
         <span><FaDownload /></span> <span>Request A free hard Copy</span>
         </button>
       </div>
-      <div className=" relative w-full h-[200vh]">
+      <div className=" relative w-full h-[205vh]">
       <Image
         src="/kemiolumuyiwa.png"
         alt="New Dawn, Same Fire"
         className="mt-8 shadow-lg object-cover object-top" fill priority
       />
-</div>
-<section className="w-full bg-[#260406] py-10 px-[10%] grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+      </div>
+<section className="w-full bg-[#260406] py-10 px-[25%] grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
   <div>
-    <h2 className="text-2xl font-bold text-white">20K+</h2>
-    <p className="text-gray-300">Quotes Inspired</p>
+    <h2 className={`${fruances.className} text-[56px] leading-[84px] font-normal text-[#FFEECC]`}>5K+</h2>
+    <p className={`${sora.className} text-[18px] leading-[27px] text-gray-300`}>Quotes Inspired</p>
   </div>
   <div>
-    <h2 className="text-2xl font-bold text-white">20K+</h2>
-    <p className="text-gray-300">Downloads</p>
+    <h2 className={`${fruances.className} text-[56px] leading-[84px] font-normal text-[#FFEECC]`}>10K+</h2>
+    <p className={`${sora.className} text-[18px] leading-[27px] text-gray-300`}>Downloads</p>
   </div>
   <div>
-    <h2 className="text-2xl font-bold text-white">25K+</h2>
-    <p className="text-gray-300">Shares</p>
+    <h2 className={`${fruances.className} text-[56px] leading-[84px] font-normal text-[#FFEECC]`}>5K+</h2>
+    <p className={`${sora.className} text-[18px] leading-[27px] text-gray-300`}>Shares</p>
   </div>
 </section>
 
