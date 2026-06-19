@@ -268,56 +268,72 @@ export default function Home() {
         <section>
         </section>
 
-        <section className="flex flex-col md:flex-row items-center gap-10 p-10 bg-[#F9F5EE] rounded-2x1">
-          {/* Author Text */}
-          <div className="flex flex-col justify center w-full pr-10 w-1/2 ml-8">
-            <h2 className={` ${sora.className} text-sm md:text-xl items-start font-normal text-[#1B5E35] md:mb-4`}>ABOUT AUTHOR</h2>
-            <h2 className={`${fruances.className} italic text-3xl items-start font-normal text-[#260406] mb-4`}>Meet Kemi Olumuyiwa</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+        <section className="flex flex-col md:flex-row items-center gap-3 md:gap-10 p-10 bg-[#F9F5EE] rounded-2xl">
+
+          {/* Headings - always first */}
+          <div className="w-full text-center md:hidden">
+            <h2 className={`${sora.className} text-sm font-normal text-[#1B5E35]`}>ABOUT AUTHOR</h2>
+            <h2 className={`${fruances.className} italic text-[18px] leading-[38px] md:text-[36px] font-normal text-[#260406]`}>Meet Kemi Olumuyiwa</h2>
+          </div>
+
+          {/* Author Image */}
+          <div className="order-1 md:order-2 w-full md:w-1/2 h-[350px] overflow-hidden rounded-xl">
+            <Image
+              src="/kemib.jpg"
+              alt="Kemi Olumuyiwa"
+              className="rounded-xl object-cover object-top w-full h-full"
+              width={579} height={418}
+            />
+          </div>
+
+          {/* Text and Icons - after image on mobile, left side on desktop */}
+          <div className="order-2 md:order-1 flex flex-col w-full md:w-1/2 text-center md:text-left">
+            {/* Headings - desktop only */}
+            <h2 className={`${sora.className} hidden md:block text-xl font-normal text-[#1B5E35] mb-4`}>ABOUT AUTHOR</h2>
+            <h2 className={`${fruances.className} hidden md:block italic text-3xl font-normal text-[#260406] mb-4`}>Meet Kemi Olumuyiwa</h2>
+
+            <p className={`${sora.className} text-sm md:text-base leading-relaxed mb-4 text-[#555555]`}>
               Author, mentor, leader, speaker, and advocate for grace, resilience, and personal transformation.
               Through her journey, she has inspired many to embrace change, rediscover purpose, and keep the fire within burning.
             </p>
-            <p className="text-gray-600 italic mb-6">
+            <p className={`${sora.className} text-sm md:text-base mb-6 text-[#555555]`}>
               New Dawn, Same Fire is her testimony that no matter the season, grace always makes a way..
             </p>
 
             {/* Icons Section */}
             <div className="flex items-start justify-between text-sm font-medium text-gray-800">
-              <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
-                <GiOpenBook className="text-[#C0840B] text-xl" /></div>
+              <span className="flex flex-col items-center">
+                <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  <GiOpenBook className="text-[#C0840B] text-xl" />
+                </div>
                 <p>Author</p>
               </span>
-              <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
-                <MdKeyboardVoice className="text-[#C0840B] text-xl" /></div>
+              <span className="flex flex-col items-center">
+                <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  <MdKeyboardVoice className="text-[#C0840B] text-xl" />
+                </div>
                 <p>Speaker</p>
               </span>
-              <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
-                <MdGroups2 className="text-[#C0840B] text-xl" /></div>
+              <span className="flex flex-col items-center">
+                <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  <MdGroups2 className="text-[#C0840B] text-xl" />
+                </div>
                 <p>Mentor</p>
               </span>
-              <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
-                <GrAggregate className="text-[#C0840B] text-xl" /></div>
+              <span className="flex flex-col items-center">
+                <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  <GrAggregate className="text-[#C0840B] text-xl" />
+                </div>
                 <p>Leader</p>
               </span>
-              <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
-                <FaHandHoldingWater className="text-[#C0840B] text-xl" /></div>
-                <p><span className="hidden md:inline ">Community</span>Impact</p>
+              <span className="flex flex-col items-center">
+                <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  <FaHandHoldingWater className="text-[#C0840B] text-xl" />
+                </div>
+                <p><span className="hidden md:inline">Community </span>Impact</p>
               </span>
-
             </div>
           </div>
-          
-          {/* Author Image */}
-            <div className="w-full h-[350px] overflow-hidden rounded-xl">
-              <Image
-                src="/kemib.jpg" // place your image in public/images
-                alt="Kemi Olumuyiwa"
-                className="rounded-xl object-cover object-center"
-                width={579} height={418}
-              />
-          </div>
-
-          {/* Author Text */}
 
         </section>
 
@@ -330,7 +346,7 @@ export default function Home() {
 
             <p className={` ${sora.className} text-xl font-normal mb-6 `}>
               Moto Foundation <span className="text-white/70">(Mutajero Oyekan; Teniola Olumuyiwa (Moto) Foundation)
-              is the charity outlet of Mutajero Ventures Ltd, incorporated in April 1993.</span>
+                is the charity outlet of Mutajero Ventures Ltd, incorporated in April 1993.</span>
             </p>
             <div className="flex gap-x-3 ">
               <p className={`${fruances.className} text-sm mb-2 text-white/60 italic`}>Click any of these links to follow us:</p>
@@ -352,12 +368,12 @@ export default function Home() {
           <div className="flex flex-col items-center">
             <p className={`${fruances.className} text-sm text-[#F9F5EE]`}>Scan the QR to get your free copy here.</p>
             <div className="mx-auto flex aspect-[283/270] w-full max-w-[283px] items-center justify-center rounded-[8px] border-[3px] border-[#240406] bg-white px-[18px] py-[14px] md:px-[28px]">
-            <QRCode
-              value={pdfUrl}
-              size={220}
-              fgColor="#240406"
-              bgColor="#FFFFFF"
-            />
+              <QRCode
+                value={pdfUrl}
+                size={220}
+                fgColor="#240406"
+                bgColor="#FFFFFF"
+              />
             </div>
 
           </div>
@@ -367,7 +383,7 @@ export default function Home() {
 
 
         {/* Bottom Legal Section */}
-        <div className={`${sora.className} mt-8 border-t border-gray-700 text-white/50 pt-4 flex flex-col md:flex-row justify-between text-xg`}>
+        <div className={`${sora.className} mt-8 border-t border-[#D9D9D9]/10 text-white/50 pt-4 flex flex-col md:flex-row justify-between text-xg`}>
           <p>© 2026 New Dawn, Same fire. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="/privacy">Privacy Policy</a>
