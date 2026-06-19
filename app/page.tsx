@@ -10,6 +10,7 @@ import { GiOpenBook } from "react-icons/gi";
 import { GiSelfLove } from "react-icons/gi";
 import { BsStars } from "react-icons/bs";
 import { FiSunset } from "react-icons/fi";
+import { FaBars } from "react-icons/fa";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import QRCode from "react-qr-code";
 import { GrAggregate } from "react-icons/gr";
@@ -28,6 +29,22 @@ export default function Home() {
   const pdfUrl = "ebook.pdf"
   return (
     <>
+    <header className={`bg-[#F9F5EE] ${fruances.className} flex items-center justify-between px-4 py-4 md:hidden`}>
+        <span className="text-sm font-bold text-[#280506]">New Dawn, Same fire</span>
+        <details className="relative">
+          <summary className="list-none cursor-pointer rounded-md p-2 text-[#0F172A] [&::-webkit-details-marker]:hidden">
+            <FaBars className="text-xl" />
+          </summary>
+          <div className="absolute right-0 top-full z-20 mt-3 w-56 rounded-lg border border-[#E5E7EB] bg-white p-4 shadow-lg">
+            <nav className="flex flex-col gap-3 text-sm text-[#555555]">
+              <Link href="#about">About</Link>
+              <Link href="#about">What's Inside</Link>
+              <Link href="#about">Message</Link>
+            </nav>
+          </div>
+        </details>
+      </header>
+    
       <header className={`bg-[#F9F5EE] ${fruances.className} flex flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:px-8`}>
         <nav className="flex flex-wrap justify-center gap-4 md:flex-1 md:gap-5">
           <Link href="#about" className="text-[#555555]">About</Link>
