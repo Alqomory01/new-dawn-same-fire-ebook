@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, type FormEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { RxDownload } from "react-icons/rx";
@@ -27,11 +30,20 @@ const fruances = Fraunces({
 });
 
 export default function Home() {
+  const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
   const pdfUrl = "https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf"
+
+  const openRequestModal = () => setIsRequestModalOpen(true);
+  const closeRequestModal = () => setIsRequestModalOpen(false);
+  const handleRequestSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    closeRequestModal();
+  };
+
   return (
     <>
       <header className={`bg-[#F9F5EE] ${fruances.className} flex items-center justify-between px-4 py-4 md:hidden`}>
-        <span className="text-xl font-bold text-[#280506]">New Dawn, Same fire</span>
+        <span className="text-xl font-bold text-[#280506] italic">Kemi Olumuyiwa</span>
         <details className="relative">
           <summary className="list-none cursor-pointer rounded-md p-2 text-[#0F172A] [&::-webkit-details-marker]:hidden">
             <FaBars className="text-xl" />
@@ -71,11 +83,11 @@ export default function Home() {
           </p>
         </div>
 
-        <div className={`mt-6 flex w-full flex-col gap-3 px-4 ${fruances.className} md:w-auto md:flex-row md:px-0`}>
+        <div className={`mt-12 flex w-full flex-col gap-3 px-4 ${fruances.className} md:w-auto md:flex-row md:px-0`}>
           <button className="bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
             <span><MdQrCodeScanner /></span><span className="text-[#FFFFFF]">Scan QR for free soft copy</span>
           </button>
-          <button className="bg-[#260406] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
+          <button type="button" onClick={openRequestModal} className="bg-[#260406] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
             <span><GiOpenBook /></span> <span>Request A free hard Copy</span>
           </button>
         </div>
@@ -88,8 +100,8 @@ export default function Home() {
             priority
           />
         </div>
-        <section className="w-full bg-[#260406] py-4 px-4 md:py-10 text-center md:px-[25%]">
-          <div className="grid grid-cols-3 gap-6 md:grid-cols-3">
+        <section className="w-full bg-[#260406] py-4 px-4 text-center md:py-10 md:px-[25%]">
+          <div className="grid grid-cols-3 gap-6 sm:grid-cols-3">
             <div>
               <h2 className={`${fruances.className} text-2xl font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>15K+</h2>
               <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>Downloads</p>
@@ -201,7 +213,7 @@ export default function Home() {
                 <li className="flex items-center gap-x-2 mb-2"><span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Collectible Edition</span></li>
                 <li className="flex items-center gap-x-2 mb-2"> <span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Gift Option</span></li>
               </ul>
-              <button className="mt-auto flex h-[56px] w-full items-center justify-center gap-[10px] rounded-[4px] bg-[#260406] px-6 py-3 text-white md:h-[64px] md:max-w-[482px] md:px-[99px] md:py-[20px]">
+              <button type="button" onClick={openRequestModal} className="mt-auto flex h-[56px] w-full items-center justify-center gap-[10px] rounded-[4px] bg-[#260406] px-6 py-3 text-white md:h-[64px] md:max-w-[482px] md:px-[99px] md:py-[20px]">
                 <span className="text-xl"><GiOpenBook /></span>
                 <span>Request A free hard Copy</span>
               </button>
@@ -209,7 +221,7 @@ export default function Home() {
           </div>
 
         </section>
-        <section className="w-full bg-white px-15 py-12 text-center md:px-[10%] md:py-[10%]">
+        <section className="w-full bg-white px-4 py-12 text-center md:px-[10%] md:py-[10%]">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
             {/* Author Image */}
 
@@ -301,7 +313,7 @@ export default function Home() {
             </p>
 
             {/* Icons Section */}
-            <div className="flex items-start justify-between text-sm font-medium text-gray-800">
+            <div className="flex flex-wrap items-start justify-center gap-4 text-sm font-medium text-gray-800 md:justify-between">
               <span className="flex flex-col items-center">
                 <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                   <GiOpenBook className="text-[#C0840B] text-xl" />
@@ -339,11 +351,11 @@ export default function Home() {
 
       </main>
       <footer className="bg-[#240406] text-white p-15">
-  <div className="flex flex-col items-center md:flex-row md:items-start gap-x-60 justify-between">
+  <div className="flex flex-col items-center justify-between gap-10 md:flex-row md:items-start md:gap-x-12 xl:gap-x-60">
 
     {/* Left Section */}
     <div className="max-w-md flex flex-col items-center text-center md:items-start md:text-left">
-      <p className={` ${sora.className} text-sm md:text-xl mb-6 `}>
+      <p className={` ${sora.className} mb-6 text-sm md:text-xl `}>
         MOTO Foundation <span className="text-white/70">(Mutajero Oyekan; Teniola Olumuyiwa (MOTO) Foundation)
           is the charity outlet of Mutajero Ventures Ltd, incorporated in April 1993.</span>
       </p>
@@ -380,7 +392,7 @@ export default function Home() {
   </div>
 
   {/* Bottom Legal Section */}
-  <div className={`${sora.className} mt-8 border-t border-[#D9D9D9]/10 text-white/50 pt-4 flex flex-col items-center text-center gap-4 md:flex-row md:items-center md:text-left md:gap-0 justify-between text-xg`}>
+  <div className={`${sora.className} mt-8 flex flex-col items-center justify-between gap-4 border-t border-[#D9D9D9]/10 pt-4 text-center text-sm text-white/50 md:flex-row md:items-center md:text-left md:gap-0`}>
     <p>© 2026 New Dawn, Same fire. All rights reserved.</p>
     <div className="flex gap-4 flex-wrap justify-center">
       <a href="/privacy">Privacy Policy</a>
@@ -389,6 +401,57 @@ export default function Home() {
     </div>
   </div>
 </footer>
+
+      {isRequestModalOpen ? (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-6"
+          onClick={closeRequestModal}
+        >
+          <div
+            className="w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl md:p-8"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h2 className={`${fruances.className} text-2xl text-[#260406] md:text-3xl`}>Request Free hard copy</h2>
+                <p className={`${sora.className} mt-2 text-sm leading-6 text-[#555555]`}>
+                  Free for our guests- while supplies last. we’ll confirm delivery detail shortly.
+                </p>
+              </div>
+              <button type="button" onClick={closeRequestModal} className="rounded-full p-2 text-[#555555] hover:bg-[#F3F4F6]" aria-label="Close request form">
+                ✕
+              </button>
+            </div>
+
+            <form onSubmit={handleRequestSubmit} className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+              <label className="flex flex-col gap-2 text-sm text-[#555555] md:col-span-1">
+                FULL NAME
+                <input required name="fullName" className="rounded-lg border border-[#E5E7EB] px-4 py-3 outline-none focus:border-[#C0840B]" type="text" placeholder="e.g adeola bankole" />
+              </label>
+              <label className="flex flex-col gap-2 text-sm text-[#555555] md:col-span-1">
+                PHONE NUMBER
+                <input required name="phone" className="rounded-lg border border-[#E5E7EB] px-4 py-3 outline-none focus:border-[#C0840B]" type="tel" placeholder="08090930909" />
+              </label>
+              <label className="flex flex-col gap-2 text-sm text-[#555555] md:col-span-2">
+                DELIVERY ADDRESS
+                <textarea required name="address" rows={4} className="rounded-lg border border-[#E5E7EB] px-4 py-3 outline-none focus:border-[#C0840B]" placeholder="Street, city, state, zip code" />
+              </label>
+              <label className="flex flex-col gap-2 text-sm text-[#555555] md:col-span-2">
+                ADDITIONAL NOTE
+                <textarea name="note" rows={3} className="rounded-lg border border-[#E5E7EB] px-4 py-3 outline-none focus:border-[#C0840B]" placeholder="Optional details about your request" />
+              </label>
+              <div className="flex flex-col gap-3 pt-2 md:col-span-2 md:flex-row md:justify-end">
+                <button type="button" onClick={closeRequestModal} className="rounded-md border border-[#D1D5DB] px-5 py-3 text-[#555555]">
+                  Cancel
+                </button>
+                <button type="submit" className="rounded-md bg-[#260406] px-5 py-3 text-white">
+                  Submit request
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      ) : null}
     </>
   );
 }
