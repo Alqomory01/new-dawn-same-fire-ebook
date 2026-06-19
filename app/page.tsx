@@ -124,7 +124,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col md:flex-row md:items-center pb-[15px]">
                     <strong className="block text-2xl md:pb-[15px] md:text-3xl">136+ Pages</strong>
-                    <span className={`${sora.className} text-[#555555]`}>of inspiration</span>
+                    <span className={`${sora.className} text-[#555555] md:pl-2`}>of inspiration</span>
                   </div>
                 </li>
                 <li className="rounded bg-[#F9F5EE] pl-4 pr-4 text-left md:pl-6 md:pr-8">
@@ -133,7 +133,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col md:flex-row md:items-center pb-[15px]">
                     <strong className="block text-2xl md:pb-[15px] md:text-3xl">Personal Memoir</strong>
-                    <span className={`${sora.className} text-[#555555]`}>(a story of grace)</span>
+                    <span className={`${sora.className} text-[#555555] md:pl-2`}>(a story of grace)</span>
                   </div>
                 </li>
                 <li className="rounded bg-[#F9F5EE] pl-4 pr-4 text-left md:pl-6 md:pr-8">
@@ -142,7 +142,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col md:flex-row md:items-center pb-[15px]">
                     <strong className="text-2xl md:pb-[15px]  md:text-3xl">Personal Stories</strong>
-                    <span className={`${sora.className} text-[#555555]`}>(real & raw)</span>
+                    <span className={`${sora.className} text-[#555555] md:pl-2`}>(real & raw)</span>
                   </div>
                 </li>
                 <li className="rounded bg-[#F9F5EE] pl-4 pr-4 text-left md:pl-6 md:pr-8"><div className="bg-[#C0840B] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0 my-[15px]">
@@ -150,7 +150,7 @@ export default function Home() {
                 </div>
                   <div className="flex flex-col md:flex-row md:items-center pb-[15px]">
                     <strong className="text-2xl md:pb-[15px] md:text-3xl">Lesson On Renewal</strong>
-                    <span className={`${sora.className} text-[#555555]`}>(for every season)</span>
+                    <span className={`${sora.className} text-[#555555] md:pl-2`}>(for every season)</span>
                   </div>
                 </li>
               </ul>
