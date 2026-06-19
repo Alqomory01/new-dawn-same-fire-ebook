@@ -338,60 +338,57 @@ export default function Home() {
         </section>
 
       </main>
-      <footer className="bg-[#240406] text-white p-10">
-        <div className="flex flex-col md:flex-row items-start gap-x-60 justify-between">
+      <footer className="bg-[#240406] text-white p-15">
+  <div className="flex flex-col items-center md:flex-row md:items-start gap-x-60 justify-between">
 
-          {/* Left Section */}
-          <div className="max-w-md">
+    {/* Left Section */}
+    <div className="max-w-md flex flex-col items-center text-center md:items-start md:text-left">
+      <p className={` ${sora.className} text-sm md:text-xl mb-6 `}>
+        MOTO Foundation <span className="text-white/70">(Mutajero Oyekan; Teniola Olumuyiwa (MOTO) Foundation)
+          is the charity outlet of Mutajero Ventures Ltd, incorporated in April 1993.</span>
+      </p>
+      <div className="flex gap-x-3 justify-center md:justify-start">
+        <p className={`${fruances.className} text-sm mb-2 text-white/60 italic`}>Click any of these links to follow us:</p>
+      </div>
 
-            <p className={` ${sora.className} text-xl font-normal mb-6 `}>
-              Moto Foundation <span className="text-white/70">(Mutajero Oyekan; Teniola Olumuyiwa (Moto) Foundation)
-                is the charity outlet of Mutajero Ventures Ltd, incorporated in April 1993.</span>
-            </p>
-            <div className="flex gap-x-3 ">
-              <p className={`${fruances.className} text-sm mb-2 text-white/60 italic`}>Click any of these links to follow us:</p>
-              <div className="flex gap-4 text-2xl">
-                <a href="https://instagram.com" aria-label="Instagram"><FaInstagram /></a>
-                <a href="https://facebook.com" aria-label="Facebook"><FaFacebook /></a>
-                <a href="https://x.com" aria-label="X"><FaXTwitter /></a>
-              </div>
-            </div>
-          </div>
+      <div className="flex gap-4 text-2xl mb-8 justify-center md:justify-start">
+        <a href="https://instagram.com" aria-label="Instagram"><FaInstagram /></a>
+        <a href="https://facebook.com" aria-label="Facebook"><FaFacebook /></a>
+        <a href="https://x.com" aria-label="X"><FaXTwitter /></a>
+      </div>
+    </div>
 
-          {/* middles section */}
-          <nav className={`${fruances.className} flex flex-col gap-3 flex-1 justify-center`}>
-            <Link href="#about" className="text-[#E6E6E6]/60">About</Link>
-            <Link href="#about" className="text-[#E6E6E6]/60">What's Inside</Link>
-            <Link href="#about" className="text-[#E6E6E6]/60">Message</Link>
-          </nav>
-          {/* Right Section */}
-          <div className="flex flex-col items-center">
-            <p className={`${fruances.className} text-sm text-[#F9F5EE]`}>Scan the QR to get your free copy here.</p>
-            <div className="mx-auto flex aspect-[283/270] w-full max-w-[283px] items-center justify-center rounded-[8px] border-[3px] border-[#240406] bg-white px-[18px] py-[14px] md:px-[28px]">
-              <QRCode
-                value={pdfUrl}
-                size={220}
-                fgColor="#240406"
-                bgColor="#FFFFFF"
-              />
-            </div>
+    {/* middles section */}
+    <nav className={`${fruances.className} flex flex-col gap-3 flex-1 items-center text-center md:items-start md:text-left justify-center`}>
+      <Link href="#about" className="text-[#E6E6E6]/60">About</Link>
+      <Link href="#about" className="text-[#E6E6E6]/60">What's Inside</Link>
+      <Link href="#about" className="text-[#E6E6E6]/60">Message</Link>
+    </nav>
 
-          </div>
-        </div>
+    {/* Right Section */}
+    <div className="flex flex-col items-center">
+      <p className={`${fruances.className} text-sm mb-3 text-[#F9F5EE]`}>Scan the QR to get your free copy here.</p>
+      <div className="mx-auto flex aspect-[283/270] w-full max-w-[170px] items-center justify-center rounded-[8px] border-[3px] border-[#240406] bg-white px-[18px] py-[14px] md:px-[28px]">
+        <QRCode
+          value={pdfUrl}
+          size={220}
+          fgColor="#240406"
+          bgColor="#FFFFFF"
+        />
+      </div>
+    </div>
+  </div>
 
-        {/* About Links */}
-
-
-        {/* Bottom Legal Section */}
-        <div className={`${sora.className} mt-8 border-t border-[#D9D9D9]/10 text-white/50 pt-4 flex flex-col md:flex-row justify-between text-xg`}>
-          <p>© 2026 New Dawn, Same fire. All rights reserved.</p>
-          <div className="flex gap-4">
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms Of Service</a>
-            <a href="/cookies">Cookies Policy</a>
-          </div>
-        </div>
-      </footer>
+  {/* Bottom Legal Section */}
+  <div className={`${sora.className} mt-8 border-t border-[#D9D9D9]/10 text-white/50 pt-4 flex flex-col items-center text-center gap-4 md:flex-row md:items-center md:text-left md:gap-0 justify-between text-xg`}>
+    <p>© 2026 New Dawn, Same fire. All rights reserved.</p>
+    <div className="flex gap-4 flex-wrap justify-center">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms Of Service</a>
+      <a href="/cookies">Cookies Policy</a>
+    </div>
+  </div>
+</footer>
     </>
   );
 }
