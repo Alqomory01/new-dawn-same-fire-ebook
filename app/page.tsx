@@ -90,16 +90,16 @@ export default function Home() {
         <section className="w-full bg-[#260406] py-4 px-4 md:py-10 text-center md:px-[25%]">
           <div className="grid grid-cols-3 gap-6 md:grid-cols-3">
             <div>
-              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>5K+</h2>
-              <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>Quotes Inspired</p>
-            </div>
-            <div>
-              <h2 className={`${fruances.className} text-2xl  font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>10K+</h2>
+              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>15K+</h2>
               <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>Downloads</p>
             </div>
             <div>
-              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>5K+</h2>
-              <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>Shares</p>
+              <h2 className={`${fruances.className} text-2xl  font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>20K+</h2>
+              <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>Readers</p>
+            </div>
+            <div>
+              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>16K+</h2>
+              <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>5-star review</p>
             </div>
           </div>
         </section>
@@ -112,7 +112,7 @@ export default function Home() {
                 <i>What Is <span>New Dawn, Same Fire</span> About?</i>
               </h3>
               <p className={`${sora.className} mx-auto mb-8 max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
-                A heartfelt journey through seasons of change, rediscovery, and unwavering faith. This memoir explores the beauty of beginning again while keeping the fire of purpose alive.
+                This memoir explores the beauty of beginning again  while keeping the fire of purpose alive.
               </p>
             </div>
 
