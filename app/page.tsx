@@ -159,6 +159,7 @@ export default function Home() {
               </button>
             </div>
           </div>
+
         </section>
         <section className="w-full bg-white px-4 py-12 text-center md:px-[10%] md:py-[10%]">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
@@ -181,24 +182,40 @@ export default function Home() {
             {/* <span className="text-[#C0840B80]"><IoIosStar /></span ><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span> */}
 
           </div>
-        </section>
 
-        <section>
-          <div className="bg-[#F9F5EE]">
+          <div className="grid md:grid-cols-2 gap-8 pt-10">
+          <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 items-center flex flex-col h-full">
             <Image
               src="/kemibook.png"
               alt="New Dawn, Same Fire"
-              className="mt-8 shadow-lg " width={300} height={400}
+              className="mt-8 " width={300} height={400}
             />
+            <div className="px-4 md:px-[10%] text-center">
+              <h3 className={`${fruances.className} text-[36px] leading-[54px] mb-4`}><i>Lifted</i> </h3>
+              <p className={` ${sora.className} text-[#555555]`}>
+                Faith-filled encouragement to rise above life’s challenges
+              </p>
+            </div>
           </div>
-          <div className="bg-[#F9F5EE]">
+          <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 items-center flex flex-col h-full">
             <Image
               src="/olumuyiwa.png"
               alt="New Dawn, Same Fire"
-              className="mt-8 shadow-lg " width={300} height={400}
+              className="mt-8 " width={300} height={400}
             />
+            <div className="justify center px-4 md:px-[10%] text-center">
+              <h3 className={`${fruances.className} text-[36px] leading-[54px] mb-4`}><i>Married to My Role Model</i> </h3>
+              <p className={` ${sora.className} text-[#555555]`}>
+                Faith-filled encouragement to rise above life’s challenges
+              </p>
+            </div>
+          </div>
           </div>
         </section>
+
+        <section>
+        </section>
+
         <section className="flex flex-col md:flex-row items-center gap-10 p-10 bg-pink-50 rounded-lg shadow-md">
           {/* Author Text */}
           <div className="max-w-2xl">
