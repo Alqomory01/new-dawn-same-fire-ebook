@@ -23,6 +23,7 @@ const sora = Sora({ subsets: ["latin"], weight: ["400", "700"] });
 const fruances = Fraunces({
   subsets: ["latin"],
   weight: ["300", "400", "600"], // include 600 for SemiBold
+  style: ["normal", "italic"]
 });
 
 export default function Home() {
@@ -171,7 +172,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Complimentary Copy */}
-            <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 flex flex-col h-full">
+            <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 flex flex-col h-full text-left">
               <div className="bg-[#260406] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <RxDownload className="text-white text-xl" />
               </div>
@@ -189,7 +190,7 @@ export default function Home() {
             </div>
 
             {/* Signed Hard Copy */}
-            <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 flex flex-col h-full">
+            <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 flex flex-col h-full text-left">
               <div className="bg-[#260406] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <GiOpenBook className="text-white text-xl" />
               </div>
@@ -267,52 +268,53 @@ export default function Home() {
         <section>
         </section>
 
-        <section className="flex flex-col md:flex-row items-center gap-10 p-10 bg-pink-50 rounded-lg shadow-md">
+        <section className="flex flex-col md:flex-row items-center gap-10 p-10 bg-[#F9F5EE] rounded-2x1">
           {/* Author Text */}
-          <div className="w-1/2 ml-8">
-            <h2 className={` ${sora.className}text-3xl items-start font-bold text-[#1B5E35] mb-4`}>ABOUT AUTHOR</h2>
-            <h2 className={`${fruances.className} italic text-3xl items-start font-bold text-[#260406] mb-4`}>Meet Kemi Olumuyiwa</h2>
+          <div className="flex flex-col justify center w-full pr-10 w-1/2 ml-8">
+            <h2 className={` ${sora.className} text-sm md:text-xl items-start font-normal text-[#1B5E35] md:mb-4`}>ABOUT AUTHOR</h2>
+            <h2 className={`${fruances.className} italic text-3xl items-start font-normal text-[#260406] mb-4`}>Meet Kemi Olumuyiwa</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              author, mentor, leader, speaker, and advocate for grace, resilience, and personal transformation.
+              Author, mentor, leader, speaker, and advocate for grace, resilience, and personal transformation.
               Through her journey, she has inspired many to embrace change, rediscover purpose, and keep the fire within burning.
-
             </p>
             <p className="text-gray-600 italic mb-6">
               New Dawn, Same Fire is her testimony that no matter the season, grace always makes a way..
             </p>
 
             {/* Icons Section */}
-            <div className="flex flex-wrap gap-4 text-sm font-medium text-gray-800">
-
+            <div className="flex items-start justify-between text-sm font-medium text-gray-800">
               <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <GiOpenBook className="text-[#C0840B] text-xl" /></div>
-                <p>Author</p></span>
+                <p>Author</p>
+              </span>
               <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <MdKeyboardVoice className="text-[#C0840B] text-xl" /></div>
-                <p>Speaker</p></span>
+                <p>Speaker</p>
+              </span>
               <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <MdGroups2 className="text-[#C0840B] text-xl" /></div>
-                <p>Mentor</p></span>
-
+                <p>Mentor</p>
+              </span>
               <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <GrAggregate className="text-[#C0840B] text-xl" /></div>
-                <p>Leader</p></span>
+                <p>Leader</p>
+              </span>
               <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <FaHandHoldingWater className="text-[#C0840B] text-xl" /></div>
-                <p>Community Impact</p></span>
+                <p><span className="hidden md:inline ">Community</span>Impact</p>
+              </span>
 
             </div>
           </div>
+          
           {/* Author Image */}
-          <div className="w-1/2">
-            <div className="w-[400px] h-[300px] overflow-hidden rounded-xl">
+            <div className="w-full h-[350px] overflow-hidden rounded-xl">
               <Image
                 src="/kemib.jpg" // place your image in public/images
                 alt="Kemi Olumuyiwa"
                 className="rounded-xl object-cover object-center"
                 width={579} height={418}
               />
-            </div>
           </div>
 
           {/* Author Text */}
@@ -326,12 +328,12 @@ export default function Home() {
           {/* Left Section */}
           <div className="max-w-md">
 
-            <p className="text-sm mb-4">
-              Moto Foundation (Mutajero Oyekan; Teniola Olumuyiwa (Moto) Foundation)
-              is the charity outlet of Mutajero Ventures Ltd, incorporated in April 1993.
+            <p className={` ${sora.className} text-xl font-normal mb-6 `}>
+              Moto Foundation <span className="text-white/70">(Mutajero Oyekan; Teniola Olumuyiwa (Moto) Foundation)
+              is the charity outlet of Mutajero Ventures Ltd, incorporated in April 1993.</span>
             </p>
             <div className="flex gap-x-3 ">
-              <p className="text-sm mb-2">Click any of these links to follow us:</p>
+              <p className={`${fruances.className} text-sm mb-2 text-white/60 italic`}>Click any of these links to follow us:</p>
               <div className="flex gap-4 text-2xl">
                 <a href="https://instagram.com" aria-label="Instagram"><FaInstagram /></a>
                 <a href="https://facebook.com" aria-label="Facebook"><FaFacebook /></a>
@@ -341,20 +343,22 @@ export default function Home() {
           </div>
 
           {/* middles section */}
-          <nav className="flex flex-col gap-5 flex-1 justify-center ">
-            <Link href="#about" className="text-[#fffff]">About</Link>
-            <Link href="#about" className="text-[#ffffff]">What's Inside</Link>
-            <Link href="#about" className="text-[#ffffff]">Message</Link>
+          <nav className={`${fruances.className} flex flex-col gap-3 flex-1 justify-center`}>
+            <Link href="#about" className="text-[#E6E6E6]/60">About</Link>
+            <Link href="#about" className="text-[#E6E6E6]/60">What's Inside</Link>
+            <Link href="#about" className="text-[#E6E6E6]/60">Message</Link>
           </nav>
           {/* Right Section */}
           <div className="flex flex-col items-center">
-            <p className="text-sm">Scan the QR to get your free copy here.</p>
+            <p className={`${fruances.className} text-sm text-[#F9F5EE]`}>Scan the QR to get your free copy here.</p>
+            <div className="mx-auto flex aspect-[283/270] w-full max-w-[283px] items-center justify-center rounded-[8px] border-[3px] border-[#240406] bg-white px-[18px] py-[14px] md:px-[28px]">
             <QRCode
               value={pdfUrl}
               size={220}
               fgColor="#240406"
               bgColor="#FFFFFF"
             />
+            </div>
 
           </div>
         </div>
@@ -363,7 +367,7 @@ export default function Home() {
 
 
         {/* Bottom Legal Section */}
-        <div className="mt-8 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between text-xs">
+        <div className={`${sora.className} mt-8 border-t border-gray-700 text-white/50 pt-4 flex flex-col md:flex-row justify-between text-xg`}>
           <p>© 2026 New Dawn, Same fire. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="/privacy">Privacy Policy</a>
