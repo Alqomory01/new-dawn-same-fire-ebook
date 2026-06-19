@@ -116,8 +116,8 @@ export default function Home() {
               </p>
             </div>
 
-            <div className={`${fruances.className} max-w-full text-[#555555]`}>
-              <ul className="grid w-full grid-cols-2 gap-4 text-[#260406]  pb-[15px]">
+            <div className={`${fruances.className} w-full md:max-w-full text-[#555555]`}>
+              <ul className="grid w-full grid-cols-1 md:grid-cols-2 gap-4 text-[#260406] pb-[15px]">
                 <li className="rounded bg-[#F9F5EE] pl-4 pr-4 text-left md:pl-6 md:pr-8">
                   <div className="bg-[#C0840B] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0 my-[15px]">
                     <GiOpenBook className="text-white text-xl" />
