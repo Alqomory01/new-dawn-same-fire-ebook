@@ -29,7 +29,7 @@ export default function Home() {
   const pdfUrl = "ebook.pdf"
   return (
     <>
-    <header className={`bg-[#F9F5EE] ${fruances.className} flex items-center justify-between px-4 py-4 md:hidden`}>
+      <header className={`bg-[#F9F5EE] ${fruances.className} flex items-center justify-between px-4 py-4 md:hidden`}>
         <span className="text-sm font-bold text-[#280506]">New Dawn, Same fire</span>
         <details className="relative">
           <summary className="list-none cursor-pointer rounded-md p-2 text-[#0F172A] [&::-webkit-details-marker]:hidden">
@@ -44,8 +44,8 @@ export default function Home() {
           </div>
         </details>
       </header>
-    
-      <header className={`bg-[#F9F5EE] ${fruances.className} flex flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:px-8`}>
+
+      <header className={` hidden md:flex bg-[#F9F5EE] ${fruances.className} flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:px-8`}>
         <nav className="flex flex-wrap justify-center gap-4 md:flex-1 md:gap-5">
           <Link href="#about" className="text-[#555555]">About</Link>
           <Link href="#about" className="text-[#555555]">What's Inside</Link>
@@ -89,18 +89,18 @@ export default function Home() {
         </div>
         <section className="w-full bg-[#260406] px-4 py-10 text-center md:px-[25%]">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div>
-            <h2 className={`${fruances.className} text-[32px] leading-[40px] font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>5K+</h2>
-            <p className={`${sora.className} text-sm leading-6 text-gray-300 md:text-[18px] md:leading-[27px]`}>Quotes Inspired</p>
-          </div>
-          <div>
-            <h2 className={`${fruances.className} text-[32px] leading-[40px] font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>10K+</h2>
-            <p className={`${sora.className} text-sm leading-6 text-gray-300 md:text-[18px] md:leading-[27px]`}>Downloads</p>
-          </div>
-          <div>
-            <h2 className={`${fruances.className} text-[32px] leading-[40px] font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>5K+</h2>
-            <p className={`${sora.className} text-sm leading-6 text-gray-300 md:text-[18px] md:leading-[27px]`}>Shares</p>
-          </div>
+            <div>
+              <h2 className={`${fruances.className} text-[32px] leading-[40px] font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>5K+</h2>
+              <p className={`${sora.className} text-sm leading-6 text-gray-300 md:text-[18px] md:leading-[27px]`}>Quotes Inspired</p>
+            </div>
+            <div>
+              <h2 className={`${fruances.className} text-[32px] leading-[40px] font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>10K+</h2>
+              <p className={`${sora.className} text-sm leading-6 text-gray-300 md:text-[18px] md:leading-[27px]`}>Downloads</p>
+            </div>
+            <div>
+              <h2 className={`${fruances.className} text-[32px] leading-[40px] font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>5K+</h2>
+              <p className={`${sora.className} text-sm leading-6 text-gray-300 md:text-[18px] md:leading-[27px]`}>Shares</p>
+            </div>
           </div>
         </section>
 
@@ -210,36 +210,36 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 gap-8 pt-10 md:grid-cols-2">
-          <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 items-center flex flex-col h-full">
-            <Image
-              src="/kemibook.png"
-              alt="New Dawn, Same Fire"
-              className="mt-8 h-auto w-full max-w-[300px]"
-              width={300}
-              height={400}
-            />
-            <div className="px-0 text-center md:px-[10%]">
-              <h3 className={`${fruances.className} text-[28px] leading-[38px] mb-4 md:text-[36px] md:leading-[54px]`}><i>Lifted</i> </h3>
-              <p className={` ${sora.className} text-sm leading-6 text-[#555555] md:text-base`}>
-                Faith-filled encouragement to rise above life’s challenges
-              </p>
+            <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 items-center flex flex-col h-full">
+              <Image
+                src="/kemibook.png"
+                alt="New Dawn, Same Fire"
+                className="mt-8 h-auto w-full max-w-[300px]"
+                width={300}
+                height={400}
+              />
+              <div className="px-0 text-center md:px-[10%]">
+                <h3 className={`${fruances.className} text-[28px] leading-[38px] mb-4 md:text-[36px] md:leading-[54px]`}><i>Lifted</i> </h3>
+                <p className={` ${sora.className} text-sm leading-6 text-[#555555] md:text-base`}>
+                  Faith-filled encouragement to rise above life’s challenges
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 items-center flex flex-col h-full">
-            <Image
-              src="/olumuyiwa.png"
-              alt="New Dawn, Same Fire"
-              className="mt-8 h-auto w-full max-w-[300px]"
-              width={300}
-              height={400}
-            />
-            <div className="justify-center px-0 text-center md:px-[10%]">
-              <h3 className={`${fruances.className} text-[28px] leading-[38px] mb-4 md:text-[36px] md:leading-[54px]`}><i>Married to My Role Model</i> </h3>
-              <p className={` ${sora.className} text-sm leading-6 text-[#555555] md:text-base`}>
-                Faith-filled encouragement to rise above life’s challenges
-              </p>
+            <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 items-center flex flex-col h-full">
+              <Image
+                src="/olumuyiwa.png"
+                alt="New Dawn, Same Fire"
+                className="mt-8 h-auto w-full max-w-[300px]"
+                width={300}
+                height={400}
+              />
+              <div className="justify-center px-0 text-center md:px-[10%]">
+                <h3 className={`${fruances.className} text-[28px] leading-[38px] mb-4 md:text-[36px] md:leading-[54px]`}><i>Married to My Role Model</i> </h3>
+                <p className={` ${sora.className} text-sm leading-6 text-[#555555] md:text-base`}>
+                  Faith-filled encouragement to rise above life’s challenges
+                </p>
+              </div>
             </div>
-          </div>
           </div>
         </section>
 
@@ -252,46 +252,46 @@ export default function Home() {
             <h2 className={` ${sora.className}text-3xl items-start font-bold text-[#1B5E35] mb-4`}>ABOUT AUTHOR</h2>
             <h2 className={`${fruances.className} italic text-3xl items-start font-bold text-[#260406] mb-4`}>Meet Kemi Olumuyiwa</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-            author, mentor, leader, speaker, and advocate for grace, resilience, and personal transformation.
-Through her journey, she has inspired many to embrace change, rediscover purpose, and keep the fire within burning.
+              author, mentor, leader, speaker, and advocate for grace, resilience, and personal transformation.
+              Through her journey, she has inspired many to embrace change, rediscover purpose, and keep the fire within burning.
 
             </p>
             <p className="text-gray-600 italic mb-6">
-            New Dawn, Same Fire is her testimony that no matter the season, grace always makes a way..
+              New Dawn, Same Fire is her testimony that no matter the season, grace always makes a way..
             </p>
 
             {/* Icons Section */}
             <div className="flex flex-wrap gap-4 text-sm font-medium text-gray-800">
-              
+
               <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <GiOpenBook className="text-[#C0840B] text-xl" /></div>
-              <p>Author</p></span>
+                <p>Author</p></span>
               <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <MdKeyboardVoice className="text-[#C0840B] text-xl" /></div>
-              <p>Speaker</p></span>
+                <p>Speaker</p></span>
               <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <MdGroups2 className="text-[#C0840B] text-xl" /></div>
-              <p>Mentor</p></span>
-              
+                <p>Mentor</p></span>
+
               <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <GrAggregate className="text-[#C0840B] text-xl" /></div>
-              <p>Leader</p></span>
+                <p>Leader</p></span>
               <span className="flex flex-col items-center"><div className="bg-[#C0840B1A] px-3 py-1  rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <FaHandHoldingWater className="text-[#C0840B] text-xl" /></div>
-              <p>Community Impact</p></span>
+                <p>Community Impact</p></span>
 
             </div>
           </div>
           {/* Author Image */}
           <div className="w-1/2">
-          <div className="w-[400px] h-[300px] overflow-hidden rounded-xl">
-            <Image
-              src="/kemib.jpg" // place your image in public/images
-              alt="Kemi Olumuyiwa"
-              className="rounded-xl object-cover object-center"
-              width={579} height={418}
-            />
-          </div>
+            <div className="w-[400px] h-[300px] overflow-hidden rounded-xl">
+              <Image
+                src="/kemib.jpg" // place your image in public/images
+                alt="Kemi Olumuyiwa"
+                className="rounded-xl object-cover object-center"
+                width={579} height={418}
+              />
+            </div>
           </div>
 
           {/* Author Text */}
@@ -304,42 +304,42 @@ Through her journey, she has inspired many to embrace change, rediscover purpose
 
           {/* Left Section */}
           <div className="max-w-md">
-           
+
             <p className="text-sm mb-4">
               Moto Foundation (Mutajero Oyekan; Teniola Olumuyiwa (Moto) Foundation)
               is the charity outlet of Mutajero Ventures Ltd, incorporated in April 1993.
             </p>
             <div className="flex gap-x-3 ">
-            <p className="text-sm mb-2">Click any of these links to follow us:</p>
-            <div className="flex gap-4 text-2xl">
-              <a href="https://instagram.com" aria-label="Instagram"><FaInstagram /></a>
-              <a href="https://facebook.com" aria-label="Facebook"><FaFacebook /></a>
-              <a href="https://x.com" aria-label="X"><FaXTwitter /></a>
-            </div>
+              <p className="text-sm mb-2">Click any of these links to follow us:</p>
+              <div className="flex gap-4 text-2xl">
+                <a href="https://instagram.com" aria-label="Instagram"><FaInstagram /></a>
+                <a href="https://facebook.com" aria-label="Facebook"><FaFacebook /></a>
+                <a href="https://x.com" aria-label="X"><FaXTwitter /></a>
+              </div>
             </div>
           </div>
 
-{/* middles section */}
-<nav className="flex flex-col gap-5 flex-1 justify-center ">
-          <Link href="#about" className="text-[#fffff]">About</Link>
-          <Link href="#about" className="text-[#ffffff]">What's Inside</Link>
-          <Link href="#about" className="text-[#ffffff]">Message</Link>
-        </nav>
+          {/* middles section */}
+          <nav className="flex flex-col gap-5 flex-1 justify-center ">
+            <Link href="#about" className="text-[#fffff]">About</Link>
+            <Link href="#about" className="text-[#ffffff]">What's Inside</Link>
+            <Link href="#about" className="text-[#ffffff]">Message</Link>
+          </nav>
           {/* Right Section */}
           <div className="flex flex-col items-center">
-          <p className="text-sm">Scan the QR to get your free copy here.</p>
-          <QRCode
-                  value={pdfUrl}
-                  size={220}
-                  fgColor="#240406"
-                  bgColor="#FFFFFF"
-                />
-            
+            <p className="text-sm">Scan the QR to get your free copy here.</p>
+            <QRCode
+              value={pdfUrl}
+              size={220}
+              fgColor="#240406"
+              bgColor="#FFFFFF"
+            />
+
           </div>
         </div>
 
         {/* About Links */}
-      
+
 
         {/* Bottom Legal Section */}
         <div className="mt-8 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between text-xs">
