@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from 'next/navigation'
 import { RxDownload } from "react-icons/rx";
 import { Dancing_Script } from "next/font/google"
 import { Fraunces } from "next/font/google"
@@ -35,6 +36,7 @@ export default function Home() {
   const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
   const pdfUrl = "https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf"
 
+  const router = useRouter();
   const [expanded, setExpanded] = useState(false);
   const openRequestModal = () => setIsRequestModalOpen(true);
   const closeRequestModal = () => setIsRequestModalOpen(false);
@@ -57,7 +59,7 @@ export default function Home() {
               <Link href="#about">What's Inside</Link>
               <Link href="#about">Message</Link>
             </nav>
-            <button className="bg-[#C0840B] flex w-full items-center justify-center rounded py-3 my-6 gap-4 text-white md:w-auto md:px-7">
+            <button onClick={() => router.push('/https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf')} className="bg-[#C0840B] flex w-full items-center justify-center rounded py-3 my-6 gap-4 text-white md:w-auto md:px-7">
               <span><RxDownload /></span><span className="text-[#FFFFFF]">Download eBook</span>
             </button>
           </div>
