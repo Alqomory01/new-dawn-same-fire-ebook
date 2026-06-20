@@ -193,7 +193,7 @@ export default function Home() {
             <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#1B5E35]`}>A REVIEWER’S TAKE</h2>
             <div className="w-full px-0 md:px-[10%]">
               <h3 className={`${fruances.className} italic text-[18px] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}>In The Words Of  A Reader</h3>
-              <p className={` ${sora.className} mx-auto max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
+              <p className={` ${sora.className} mx-auto max-w-xs text-sm leading-6 text-[#555555] md:text-base`}>
                 An honest, first-person look at the story behind New Dawn, Same Fire.
               </p>
             </div>
@@ -366,7 +366,7 @@ export default function Home() {
         <section>
         </section>
 
-        <section className="flex flex-col md:flex-row items-center gap-3 md:gap-10 p-10 px-25 bg-[#F9F5EE] rounded-2xl">
+        <section className="flex flex-col px-6  md:flex-row items-center   md:px-25 gap-10 p-10  bg-[#F9F5EE] rounded-2xl">
 
           {/* Headings - always first */}
           <div className="w-full text-center md:hidden">
@@ -390,7 +390,7 @@ export default function Home() {
             <h2 className={`${sora.className} hidden md:block text-xl font-normal text-[#1B5E35] mb-4`}>ABOUT AUTHOR</h2>
             <h2 className={`${fruances.className} hidden md:block italic text-3xl font-normal text-[#260406] mb-4`}>Meet Kemi Olumuyiwa</h2>
 
-            <p className={`${sora.className} text-sm md:text-base leading-relaxed mb-4 text-[#555555]`}>
+            <p className={`${sora.className} text-sm w-full md:text-base leading-relaxed mb-4 text-[#555555] `}>
               Author, mentor, leader, speaker, and advocate for grace, resilience, and personal transformation.
               Through her journey, she has inspired many to embrace change, rediscover purpose, and keep the fire within burning.
             </p>
