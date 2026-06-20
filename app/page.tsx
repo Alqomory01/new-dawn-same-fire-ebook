@@ -134,12 +134,12 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
         </div>
 
         <div className={`mt-12 flex w-full flex-col gap-3 px-4 ${fruances.className} md:w-auto md:flex-row md:px-0`}>
-          <a href="#qr-section" className="bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
-            <span><MdQrCodeScanner /></span><span className="text-[#FFFFFF]">Scan QR for free soft copy</span>
+          <a href="https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf" className="bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
+            <span><MdQrCodeScanner /></span><span className="text-[#FFFFFF]">Download eBook</span>
           </a>
-          <button type="button" onClick={openRequestModal} className="bg-[#260406] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
+          <a href="#" onClick={openRequestModal} className="bg-[#260406] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white/90 md:w-auto md:px-7">
             <span><GiOpenBook /></span> <span>Request A free hard Copy</span>
-          </button>
+          </a>
         </div>
         <div className="relative mt-8 h-[52vh] w-full overflow-hidden md:h-[205vh]">
           <Image
@@ -153,15 +153,15 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
         <section className="w-full bg-[#260406] py-4 px-4 text-center md:py-10 md:px-[25%]">
           <div className="grid grid-cols-3 gap-6 sm:grid-cols-3">
             <div>
-              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${downloads.toLocaleString()}+` : "15K+"}</h2>
+              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${downloads.toLocaleString()}+` : "15K+"}</h2>
               <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>Downloads</p>
             </div>
             <div>
-              <h2 className={`${fruances.className} text-2xl  font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${readers.toLocaleString()}+` : "20K+"}</h2>
+              <h2 className={`${fruances.className} text-2xl  font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${readers.toLocaleString()}+` : "20K+"}</h2>
               <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>Readers</p>
             </div>
             <div>
-              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${reviews.toLocaleString()}+` : "16K+"}</h2>
+              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${reviews.toLocaleString()}+` : "16K+"}</h2>
               <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>5-star review</p>
             </div>
           </div>
@@ -293,8 +293,8 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
           </div>
         </section>
 
-        <section id="qr-section" className="w-full bg-[#240406] px-4 py-12 text-center md:px-[10%] md:py-[10%]">
-          <div className="mx-auto flex max-w-5xl flex-col items-center">
+        <section className="w-full bg-[#240406] px-4 py-12 text-center md:px-[10%] md:py-[10%]">
+          <div id="qr-section" className="mx-auto flex max-w-5xl flex-col items-center">
             <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#7CD9A0]`}>YOUR EXCLUSIVE GIFT</h2>
             <div className="w-full px-0 text-center md:px-[10%]">
               <h3 className={`${fruances.className} text-[18px] leading-[38px] md:mb-4 md:text-[36px] text-[#E6E6E6] md:leading-[54px]`}>
@@ -335,7 +335,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
                 <li className="flex items-center gap-x-2 mb-2"><span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Collectible Edition</span></li>
                 <li className="flex items-center gap-x-2 mb-2"> <span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Gift Option</span></li>
               </ul>
-              <button type="button" onClick={openRequestModal} className="mt-auto flex h-[56px] w-full items-center justify-center gap-[10px] rounded-[4px] bg-[#260406] px-6 py-3 text-white md:h-[64px] md:max-w-[482px] md:px-[99px] md:py-[20px]">
+              <button type="button" onClick={openRequestModal} className={`${fruances.className} mt-auto flex w-full items-center justify-center gap-4 rounded bg-[#260406] px-5 py-4 text-white md:h-[64px] md:w-auto md:px-7`}>
                 <span className="text-xl"><GiOpenBook /></span>
                 <span>Request A free hard Copy</span>
               </button>
