@@ -174,6 +174,47 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="w-full bg-white px-4 py-12 text-center md:px-[10%] md:py-[10%]">
+          <div className="mx-auto flex max-w-5xl flex-col items-center">
+            {/* Author Image */}
+
+            {/* Message */}
+            <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#1B5E35]`}>A REVIEWER’S TAKE</h2>
+            <div className="w-full px-0 md:px-[10%]">
+              <h3 className={`${fruances.className} italic text-[18px] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}>In The Words Of  A Reader</h3>
+              <p className={` ${sora.className} mx-auto max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
+                An honest, first-person look at the story behind New Dawn, Same Fire.
+              </p>
+            </div>
+
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 pt-10 md:grid-cols-2">
+            <div className="flex justify-center items-center">
+              <Image
+                src="/kemi_new_dawn.png"
+                alt="New Dawn, Same Fire"
+                className="w-full h-auto max-w-md rounded-xl object-cover object-center"
+                width={400}
+                height={600}
+              />
+            </div>
+            <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 items-center flex flex-col h-full">
+              <div className="justify-center px-0 text-center md:px-[10%]">
+                <h3 className={`${fruances.className} text-sm leading-[38px] font-bold md:text-[36px] md:leading-[54px]`}>"A conversation with a soul that refused to stay down."</h3>
+                <p className={` ${sora.className} text-sm leading-6 text-[#555555] md:text-base`}>
+                  New Dawn, Same Fire: A Journey of Unfiltered Grace takes you through the world of corporate boardrooms and the quiet, heavy moments of a home held together by faith and resolve.
+                  On its pages you feel the weight of every pillar that stood firm and the courage behind every support that changed it all. At the very heart of this journey is a celebration of the woman who started it all: the author's mother. This book beautifully honors the woman who... didn't just raise a daughter, but mentored a visionary, passing down the sharp business instincts and the moral gauge that define her today. It captures that selfless season when, while the author served on official duty in Abuja, her mother stayed behind as a steady support.
+                  That strength is mirrored in her husband, the Chairman of First Tricon Limited, a consulting, investment and development organisation with roots and reach across Africa. She celebrates him, not only with a story that makes the book un-put-down-able, but also describes him as her Faith in Action Partner — the unwavering support system that allowed her to reach for the stars.
+                  Look forward to the special section on experiential boardroom lessons for the younger generation of career women. Stay a while on the page where the 60-year-old author pens a letter to her teenage self. Mind-shifting — in my opinion, it's an exercise we all should do from time to time.
+                  In this book, you see consistency in the fruit of a life lived with purpose. It is a powerful reminder of the leverage that comes with giving generously to man and God. As it starts to make a landing, the pages showcase why retirement shouldn't be an ending but rather a new beginning — her new role as Executive Vice Chairman at First Tricon Limited, her fledgling textile manufacturing venture, and a chance to further take her love for women and youth empowerment to the next level.
+                  This book is a roadmap of many sorts for anyone who believes that their best chapters are still being written, and that a true legacy is built one faithful, family-centered step at a time. Welcome to Kemi's world of Faith, Family and Factory.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="w-full bg-[#240406] px-4 py-12 text-center md:px-[10%] md:py-[10%]">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
             <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#7CD9A0]`}>YOUR EXCLUSIVE GIFT</h2>
@@ -229,7 +270,7 @@ export default function Home() {
             {/* Author Image */}
 
             {/* Message */}
-            <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#1B5E35]`}>OTHER BOOKS</h2>
+            <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#1B5E35]`}>MORE BOOKS</h2>
             <div className="w-full px-0 md:px-[10%]">
               <h3 className={`${fruances.className} text-[18px] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}><i>More from Kemi Olumuyiwa</i> </h3>
               <p className={` ${sora.className} mx-auto max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
