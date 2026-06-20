@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from 'next/router'
 import { RxDownload } from "react-icons/rx";
 import { Dancing_Script } from "next/font/google"
 import { Fraunces } from "next/font/google"
@@ -57,9 +58,16 @@ export default function Home() {
               <Link href="#about">What's Inside</Link>
               <Link href="#about">Message</Link>
             </nav>
-            <button className="bg-[#C0840B] flex w-full items-center justify-center rounded py-3 my-6 gap-4 text-white md:w-auto md:px-7">
-              <span><RxDownload /></span><span className="text-[#FFFFFF]">Download eBook</span>
-            </button>
+            <a
+              href="https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#C0840B] flex w-full items-center justify-center rounded py-3 my-6 gap-4 text-white md:w-auto md:px-7"
+            >
+              <RxDownload />
+              <span>Download eBook</span>
+            </a>
+
           </div>
         </details>
       </header>
@@ -70,9 +78,9 @@ export default function Home() {
           <Link href="#about" className="text-[#555555]">What's Inside</Link>
           <Link href="#about" className="text-[#555555]">Message</Link>
         </nav>
-        <button className="bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-3 text-white md:mr-16 md:w-auto md:px-7 md:py-4">
+        <a href="#qr-section" className="bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-3 text-white md:mr-16 md:w-auto md:px-7 md:py-4">
           <span><MdQrCodeScanner /></span><span className="text-[#FFFFFF]">Scan QR for free soft copy</span>
-        </button>
+        </a>
       </header>
 
       <main className="flex flex-col items-center overflow-x-hidden">
@@ -83,16 +91,16 @@ export default function Home() {
           <span className="text-[#C0840B80]"><IoIosStar /></span ><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span>
         </div>
         <div className="px-4 text-center md:px-0">
-          <h1 className={`${fruances.className} text-[40px] leading-[44px] text-center md:text-[72px] md:leading-[72px]`}><span className="text-[#0F172A]">NEW DAWN,</span> <span className="text-[#C0840B]"><i>SAME FIRE</i></span></h1>
+          <h1 className={`${fruances.className} text-2xl leading-[44px] font-semibold text-center md:text-[72px] md:leading-[72px]`}><span className="text-[#280506]">NEW DAWN,</span> <span className="text-[#C0840B]"><i>SAME FIRE</i></span></h1>
           <p className={`${sora.className} mx-auto mt-4 max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
             Thank you for being part of this special celebration. As a token of appreciation, please enjoy this complimentary copy of New Dawn, Same Fire.
           </p>
         </div>
 
         <div className={`mt-12 flex w-full flex-col gap-3 px-4 ${fruances.className} md:w-auto md:flex-row md:px-0`}>
-          <button className="bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
+          <a href="#qr-section" className="bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
             <span><MdQrCodeScanner /></span><span className="text-[#FFFFFF]">Scan QR for free soft copy</span>
-          </button>
+          </a>
           <button type="button" onClick={openRequestModal} className="bg-[#260406] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
             <span><GiOpenBook /></span> <span>Request A free hard Copy</span>
           </button>
@@ -192,8 +200,17 @@ export default function Home() {
 
           </div>
 
-          <div className="grid grid-cols-1 gap-8 pt-10 md:grid-cols-2">
-            <div className="flex justify-center items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 ">
+            <div className="hidden md:flex md:order-2 flex justify-center items-center h-full">
+              <Image
+                src="/kemi.png"
+                alt="New Dawn, Same Fire"
+                className="w-full h-auto max-w-md rounded-xl object-cover object-center"
+                width={400}
+                height={600}
+              />
+            </div>
+            <div className="md:order-2 flex justify-center items-center h-full">
               <Image
                 src="/kemi_new_dawn.png"
                 alt="New Dawn, Same Fire"
@@ -204,13 +221,13 @@ export default function Home() {
             </div>
             <div className="bg-[#FFFFFF] shadow-lg rounded-lg p-3 flex flex-col items-center h-full space-y-3">
               <div className="bg-[#F5F5F5] justify-center rounded-xl p-3 text-center md:px-[10%]">
-                <h3 className={`${fruances.className} italic text-sm font-bold md:text-[36px] md:leading-[54px]`}>
+                <h3 className={`${fruances.className} italic text-sm font-bold md:text-xl `}>
                   "A conversation with a soul that refused to stay down."</h3>
               </div>
               <div className="bg-[#F5F5F5] rounded-xl p-3 text-start">
                 <p className={` ${sora.className} text-sm leading-relaxed text-[#555555] md:text-base`}>
                   New Dawn, Same Fire: A Journey of Unfiltered Grace takes you through the world of corporate boardrooms and the quiet, heavy moments of a home held together by faith and resolve.
-                  On its pages you feel the weight of every pillar that stood firm and the courage behind every support that changed it all. At the very heart of this journey is a celebration of the woman who started it all: the author's mother. This book beautifully 
+                  On its pages you feel the weight of every pillar that stood firm and the courage behind every support that changed it all. At the very heart of this journey is a celebration of the woman who started it all: the author's mother. This book beautifully
                   {!expanded && "..."}
                   {expanded && (
                     <>
@@ -230,9 +247,9 @@ export default function Home() {
                 >
                   {expanded ? "Show Less" : "Read Full Review"}
                   {expanded ? (
-                    <FaChevronUp className="text-sm align-middle" />
+                    <FaChevronUp className="text-sm relative top-[2px]" />
                   ) : (
-                    <FaChevronDown className="text-sm align-bottom" />
+                    <FaChevronDown className="text-sm relative top-[2px]" />
                   )}
                 </button>
               </div>
@@ -250,7 +267,8 @@ export default function Home() {
               <p className={`${sora.className} mx-auto mb-8 max-w-2xl text-sm leading-6 text-[#E6E6E6] md:text-base`}>Choose how you’d like to experience the book.</p>
             </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+
+          <div id="qr-section" className="grid md:grid-cols-2 gap-8">
             {/* Complimentary Copy */}
             <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 flex flex-col h-full text-left">
               <div className="bg-[#260406] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
@@ -296,7 +314,7 @@ export default function Home() {
             {/* Message */}
             <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#1B5E35]`}>MORE BOOKS</h2>
             <div className="w-full px-0 md:px-[10%]">
-              <h3 className={`${fruances.className} text-[18px] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}><i>More from Kemi Olumuyiwa</i> </h3>
+              <h3 className={`${fruances.className} italic text-[18px] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}>More from Kemi Olumuyiwa</h3>
               <p className={` ${sora.className} mx-auto max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
                 A collection of books that continue to inspire growth, purpose and meaningful living.
               </p>
@@ -314,14 +332,14 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-8 pt-10 md:grid-cols-2">
             <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 items-center flex flex-col h-full">
               <Image
-                src="/kemibook.png"
+                src="/kemi_married_to_my_role_model.png"
                 alt="New Dawn, Same Fire"
                 className="mt-8 h-auto w-full max-w-[300px]"
                 width={300}
                 height={400}
               />
               <div className="px-0 text-center md:px-[10%]">
-                <h3 className={`${fruances.className} text-xl leading-[38px] font-bold md:text-[36px] md:leading-[54px]`}>Lifted </h3>
+                <h3 className={`${fruances.className} text-xl leading-[38px] font-bold md:text-[36px] md:leading-[54px]`}>Married to My Role Model </h3>
                 <p className={` ${sora.className} text-sm leading-6 text-[#555555] md:text-base`}>
                   Faith-filled encouragement to rise above life’s challenges
                 </p>
@@ -329,16 +347,16 @@ export default function Home() {
             </div>
             <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 items-center flex flex-col h-full">
               <Image
-                src="/olumuyiwa.png"
+                src="/kemi_lifted.png"
                 alt="New Dawn, Same Fire"
                 className="mt-8 h-auto w-full max-w-[300px]"
                 width={300}
                 height={400}
               />
               <div className="justify-center px-0 text-center md:px-[10%]">
-                <h3 className={`${fruances.className} text-xl leading-[38px] font-bold md:text-[36px] md:leading-[54px]`}>Married to My Role Model</h3>
+                <h3 className={`${fruances.className} text-xl leading-[38px] font-bold md:text-[36px] md:leading-[54px]`}>Lifted</h3>
                 <p className={` ${sora.className} text-sm leading-6 text-[#555555] md:text-base`}>
-                  Faith-filled encouragement to rise above life’s challenges
+                  Celebrating life, love and grace
                 </p>
               </div>
             </div>
@@ -348,7 +366,7 @@ export default function Home() {
         <section>
         </section>
 
-        <section className="flex flex-col md:flex-row items-center gap-3 md:gap-10 p-10 bg-[#F9F5EE] rounded-2xl">
+        <section className="flex flex-col md:flex-row items-center gap-3 md:gap-10 p-10 px-25 bg-[#F9F5EE] rounded-2xl">
 
           {/* Headings - always first */}
           <div className="w-full text-center md:hidden">
