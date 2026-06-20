@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState,  type FormEvent } from "react";
+import {useEffect, useRef} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/router'
@@ -31,11 +32,46 @@ const fruances = Fraunces({
   weight: ["300", "400", "600"], // include 600 for SemiBold
   style: ["normal", "italic"]
 });
+function useCountUp(target: number, duration: number = 1500, start: boolean = false) {
+  const [count, setCount] = useState(0);
 
+  useEffect(() => {
+    if (!start) return;
+    let startTime: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      setCount(Math.floor(progress * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [start, target, duration]);
+
+  return count;
+}
 export default function Home() {
   const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
   const pdfUrl = "https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf"
 
+  const statsRef = useRef<HTMLDivElement>(null);
+const [hasAnimated, setHasAnimated] = useState(false);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting && !hasAnimated) {
+        setHasAnimated(true);
+      }
+    },
+    { threshold: 0.4 }
+  );
+  if (statsRef.current) observer.observe(statsRef.current);
+  return () => observer.disconnect();
+}, [hasAnimated]);
+
+const downloads = useCountUp(15020, 1500, hasAnimated);
+const readers   = useCountUp(20020, 1500, hasAnimated);
+const reviews   = useCountUp(16020, 1500, hasAnimated);
   const [expanded, setExpanded] = useState(false);
   const openRequestModal = () => setIsRequestModalOpen(true);
   const closeRequestModal = () => setIsRequestModalOpen(false);
@@ -117,15 +153,15 @@ export default function Home() {
         <section className="w-full bg-[#260406] py-4 px-4 text-center md:py-10 md:px-[25%]">
           <div className="grid grid-cols-3 gap-6 sm:grid-cols-3">
             <div>
-              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>15K+</h2>
+              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${downloads.toLocaleString()}+` : "15K+"}</h2>
               <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>Downloads</p>
             </div>
             <div>
-              <h2 className={`${fruances.className} text-2xl  font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>20K+</h2>
+              <h2 className={`${fruances.className} text-2xl  font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${readers.toLocaleString()}+` : "20K+"}</h2>
               <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>Readers</p>
             </div>
             <div>
-              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>16K+</h2>
+              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFFFFF] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${reviews.toLocaleString()}+` : "16K+"}</h2>
               <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>5-star review</p>
             </div>
           </div>
@@ -193,15 +229,15 @@ export default function Home() {
             <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#1B5E35]`}>A REVIEWER’S TAKE</h2>
             <div className="w-full px-0 md:px-[10%]">
               <h3 className={`${fruances.className} italic text-[18px] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}>In The Words Of  A Reader</h3>
-              <p className={` ${sora.className} mx-auto max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
+              <p className={` ${sora.className} mx-auto max-w-xs text-sm leading-6 text-[#555555] md:text-base`}>
                 An honest, first-person look at the story behind New Dawn, Same Fire.
               </p>
             </div>
 
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 ">
-            <div className="hidden md:flex md:order-2 flex justify-center items-center h-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 items-stretch ">
+            <div className="hidden md:flex md:order-2 items-stretch flex justify-center items-center h-full">
               <Image
                 src="/kemi.png"
                 alt="New Dawn, Same Fire"
@@ -210,7 +246,7 @@ export default function Home() {
                 height={600}
               />
             </div>
-            <div className="md:order-2 flex justify-center items-center h-full">
+            <div className="md:order-3 items-stretch flex justify-center items-center h-full">
               <Image
                 src="/kemi_new_dawn.png"
                 alt="New Dawn, Same Fire"
@@ -219,12 +255,12 @@ export default function Home() {
                 height={600}
               />
             </div>
-            <div className="bg-[#FFFFFF] shadow-lg rounded-lg p-3 flex flex-col items-center h-full space-y-3">
+            <div className="bg-[#FFFFFF] shadow-lg rounded-lg p-3 flex flex-col items-center h-full space-y-3 md:order-1">
               <div className="bg-[#F5F5F5] justify-center rounded-xl p-3 text-center md:px-[10%]">
                 <h3 className={`${fruances.className} italic text-sm font-bold md:text-xl `}>
                   "A conversation with a soul that refused to stay down."</h3>
               </div>
-              <div className="bg-[#F5F5F5] rounded-xl p-3 text-start">
+              <div className="bg-[#F5F5F5] rounded-xl p-3 text-start flex-1">
                 <p className={` ${sora.className} text-sm leading-relaxed text-[#555555] md:text-base`}>
                   New Dawn, Same Fire: A Journey of Unfiltered Grace takes you through the world of corporate boardrooms and the quiet, heavy moments of a home held together by faith and resolve.
                   On its pages you feel the weight of every pillar that stood firm and the courage behind every support that changed it all. At the very heart of this journey is a celebration of the woman who started it all: the author's mother. This book beautifully
@@ -366,7 +402,7 @@ export default function Home() {
         <section>
         </section>
 
-        <section className="flex flex-col md:flex-row items-center gap-3 md:gap-10 p-10 px-25 bg-[#F9F5EE] rounded-2xl">
+        <section className="flex flex-col px-6  md:flex-row items-center   md:px-25 gap-10 p-10  bg-[#F9F5EE] rounded-2xl">
 
           {/* Headings - always first */}
           <div className="w-full text-center md:hidden">
@@ -390,7 +426,7 @@ export default function Home() {
             <h2 className={`${sora.className} hidden md:block text-xl font-normal text-[#1B5E35] mb-4`}>ABOUT AUTHOR</h2>
             <h2 className={`${fruances.className} hidden md:block italic text-3xl font-normal text-[#260406] mb-4`}>Meet Kemi Olumuyiwa</h2>
 
-            <p className={`${sora.className} text-sm md:text-base leading-relaxed mb-4 text-[#555555]`}>
+            <p className={`${sora.className} text-sm w-full md:text-base leading-relaxed mb-4 text-[#555555] `}>
               Author, mentor, leader, speaker, and advocate for grace, resilience, and personal transformation.
               Through her journey, she has inspired many to embrace change, rediscover purpose, and keep the fire within burning.
             </p>
