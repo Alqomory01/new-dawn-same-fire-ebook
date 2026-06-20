@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <>
       <header className={`bg-[#F9F5EE] ${fruances.className} flex items-center justify-between px-4 py-4 md:hidden`}>
-        <span className="text-xl font-bold text-[#280506] italic">Kemi Olumuyiwa</span>
+        <span className={`${dancing.className} text-xl font-bold text-[#280506] italic`}>Kemi Olumuyiwa</span>
         <details className="relative">
           <summary className="list-none cursor-pointer rounded-md p-2 text-[#0F172A] [&::-webkit-details-marker]:hidden">
             <FaBars className="text-xl" />
@@ -54,6 +54,9 @@ export default function Home() {
               <Link href="#about">What's Inside</Link>
               <Link href="#about">Message</Link>
             </nav>
+            <button className="bg-[#C0840B] flex w-full items-center justify-center rounded py-3 my-6 gap-4 text-white md:w-auto md:px-7">
+              <span><RxDownload /></span><span className="text-[#FFFFFF]">Download eBook</span>
+            </button>
           </div>
         </details>
       </header>
@@ -441,12 +444,12 @@ export default function Home() {
                 <textarea name="note" rows={3} className="rounded-lg border border-[#E5E7EB] px-4 py-3 outline-none focus:border-[#C0840B]" placeholder="Optional details about your request" />
               </label>
               <div className="flex flex-col gap-3 pt-2 md:col-span-2 md:flex-row md:justify-end">
-                <button type="button" onClick={closeRequestModal} className="rounded-md border border-[#D1D5DB] px-5 py-3 text-[#555555]">
-                  Cancel
-                </button>
-                <button type="submit" className="rounded-md bg-[#260406] px-5 py-3 text-white">
+                <button type="submit" className={`${fruances.className}rounded-md bg-[#C0840B] px-5 py-3 text-white`}>
                   Submit request
                 </button>
+                {/* <button type="button" onClick={closeRequestModal} className="rounded-md border border-[#D1D5DB] px-5 py-3 text-[#555555]">
+                  Cancel
+                </button> */}
               </div>
             </form>
           </div>
