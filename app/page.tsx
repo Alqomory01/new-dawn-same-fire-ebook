@@ -323,14 +323,14 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-8 pt-10 md:grid-cols-2">
             <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 items-center flex flex-col h-full">
               <Image
-                src="/kemibook.png"
+                src="/kemi_married_to_my_role_model.png"
                 alt="New Dawn, Same Fire"
                 className="mt-8 h-auto w-full max-w-[300px]"
                 width={300}
                 height={400}
               />
               <div className="px-0 text-center md:px-[10%]">
-                <h3 className={`${fruances.className} text-xl leading-[38px] font-bold md:text-[36px] md:leading-[54px]`}>Lifted </h3>
+                <h3 className={`${fruances.className} text-xl leading-[38px] font-bold md:text-[36px] md:leading-[54px]`}>Married to My Role Model </h3>
                 <p className={` ${sora.className} text-sm leading-6 text-[#555555] md:text-base`}>
                   Faith-filled encouragement to rise above life’s challenges
                 </p>
@@ -338,16 +338,16 @@ export default function Home() {
             </div>
             <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 items-center flex flex-col h-full">
               <Image
-                src="/olumuyiwa.png"
+                src="/kemi_lifted.png"
                 alt="New Dawn, Same Fire"
                 className="mt-8 h-auto w-full max-w-[300px]"
                 width={300}
                 height={400}
               />
               <div className="justify-center px-0 text-center md:px-[10%]">
-                <h3 className={`${fruances.className} text-xl leading-[38px] font-bold md:text-[36px] md:leading-[54px]`}>Married to My Role Model</h3>
+                <h3 className={`${fruances.className} text-xl leading-[38px] font-bold md:text-[36px] md:leading-[54px]`}>Lifted</h3>
                 <p className={` ${sora.className} text-sm leading-6 text-[#555555] md:text-base`}>
-                  Faith-filled encouragement to rise above life’s challenges
+                  Celebrating life, love and grace
                 </p>
               </div>
             </div>
