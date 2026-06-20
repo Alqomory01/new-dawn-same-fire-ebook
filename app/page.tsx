@@ -200,8 +200,8 @@ export default function Home() {
 
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 ">
-            <div className="hidden md:flex md:order-2 flex justify-center items-center h-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 items-stretch ">
+            <div className="hidden md:flex md:order-2 items-stretch flex justify-center items-center h-full">
               <Image
                 src="/kemi.png"
                 alt="New Dawn, Same Fire"
@@ -210,7 +210,7 @@ export default function Home() {
                 height={600}
               />
             </div>
-            <div className="md:order-2 flex justify-center items-center h-full">
+            <div className="md:order-3 items-stretch flex justify-center items-center h-full">
               <Image
                 src="/kemi_new_dawn.png"
                 alt="New Dawn, Same Fire"
@@ -219,12 +219,12 @@ export default function Home() {
                 height={600}
               />
             </div>
-            <div className="bg-[#FFFFFF] shadow-lg rounded-lg p-3 flex flex-col items-center h-full space-y-3">
+            <div className="bg-[#FFFFFF] shadow-lg rounded-lg p-3 flex flex-col items-center h-full space-y-3 md:order-1">
               <div className="bg-[#F5F5F5] justify-center rounded-xl p-3 text-center md:px-[10%]">
                 <h3 className={`${fruances.className} italic text-sm font-bold md:text-xl `}>
                   "A conversation with a soul that refused to stay down."</h3>
               </div>
-              <div className="bg-[#F5F5F5] rounded-xl p-3 text-start">
+              <div className="bg-[#F5F5F5] rounded-xl p-3 text-start flex-1">
                 <p className={` ${sora.className} text-sm leading-relaxed text-[#555555] md:text-base`}>
                   New Dawn, Same Fire: A Journey of Unfiltered Grace takes you through the world of corporate boardrooms and the quiet, heavy moments of a home held together by faith and resolve.
                   On its pages you feel the weight of every pillar that stood firm and the courage behind every support that changed it all. At the very heart of this journey is a celebration of the woman who started it all: the author's mother. This book beautifully
