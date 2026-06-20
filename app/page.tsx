@@ -9,6 +9,8 @@ import { Fraunces } from "next/font/google"
 import { Sora } from "next/font/google"
 import { IoIosStar } from "react-icons/io";
 import { MdQrCodeScanner } from "react-icons/md";
+import { FaChevronUp } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa6";
 import { GiOpenBook } from "react-icons/gi";
 import { GiSelfLove } from "react-icons/gi";
 import { BsStars } from "react-icons/bs";
@@ -33,6 +35,7 @@ export default function Home() {
   const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
   const pdfUrl = "https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf"
 
+  const [expanded, setExpanded] = useState(false);
   const openRequestModal = () => setIsRequestModalOpen(true);
   const closeRequestModal = () => setIsRequestModalOpen(false);
   const handleRequestSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -199,19 +202,39 @@ export default function Home() {
                 height={600}
               />
             </div>
-            <div className="bg-[#FFFFFF] shadow-lg rounded-lg p-6 gap-4 items-center flex flex-col h-full">
-              <div className="bg-[#F5F5F5] justify-center rounded-xl px-0 text-center md:px-[10%]">
-                <h3 className={`${fruances.className} text-sm leading-[38px] font-bold md:text-[36px] md:leading-[54px]`}>"A conversation with a soul that refused to stay down."</h3>
+            <div className="bg-[#FFFFFF] shadow-lg rounded-lg p-3 flex flex-col items-center h-full space-y-3">
+              <div className="bg-[#F5F5F5] justify-center rounded-xl p-3 text-center md:px-[10%]">
+                <h3 className={`${fruances.className} italic text-sm font-bold md:text-[36px] md:leading-[54px]`}>
+                  "A conversation with a soul that refused to stay down."</h3>
               </div>
-              <div className="bg-[#F5F5F5] rounded-xl">
-                <p className={` ${sora.className} text-sm leading-6 text-[#555555] md:text-base`}>
+              <div className="bg-[#F5F5F5] rounded-xl p-3 text-start">
+                <p className={` ${sora.className} text-sm leading-relaxed text-[#555555] md:text-base`}>
                   New Dawn, Same Fire: A Journey of Unfiltered Grace takes you through the world of corporate boardrooms and the quiet, heavy moments of a home held together by faith and resolve.
-                  On its pages you feel the weight of every pillar that stood firm and the courage behind every support that changed it all. At the very heart of this journey is a celebration of the woman who started it all: the author's mother. This book beautifully honors the woman who... didn't just raise a daughter, but mentored a visionary, passing down the sharp business instincts and the moral gauge that define her today. It captures that selfless season when, while the author served on official duty in Abuja, her mother stayed behind as a steady support.
-                  That strength is mirrored in her husband, the Chairman of First Tricon Limited, a consulting, investment and development organisation with roots and reach across Africa. She celebrates him, not only with a story that makes the book un-put-down-able, but also describes him as her Faith in Action Partner — the unwavering support system that allowed her to reach for the stars.
-                  Look forward to the special section on experiential boardroom lessons for the younger generation of career women. Stay a while on the page where the 60-year-old author pens a letter to her teenage self. Mind-shifting — in my opinion, it's an exercise we all should do from time to time.
-                  In this book, you see consistency in the fruit of a life lived with purpose. It is a powerful reminder of the leverage that comes with giving generously to man and God. As it starts to make a landing, the pages showcase why retirement shouldn't be an ending but rather a new beginning — her new role as Executive Vice Chairman at First Tricon Limited, her fledgling textile manufacturing venture, and a chance to further take her love for women and youth empowerment to the next level.
-                  This book is a roadmap of many sorts for anyone who believes that their best chapters are still being written, and that a true legacy is built one faithful, family-centered step at a time. Welcome to Kemi's world of Faith, Family and Factory.
+                  On its pages you feel the weight of every pillar that stood firm and the courage behind every support that changed it all. At the very heart of this journey is a celebration of the woman who started it all: the author's mother. This book beautifully 
+                  {!expanded && "..."}
+                  {expanded && (
+                    <>
+                      {" "}honors the woman who... didn't just raise a daughter, but mentored a visionary, passing down the sharp business instincts and the moral gauge that define her today. It captures that selfless season when, while the author served on official duty in Abuja, her mother stayed behind as a steady support.
+                      That strength is mirrored in her husband, the Chairman of First Tricon Limited, a consulting, investment and development organisation with roots and reach across Africa. She celebrates him, not only with a story that makes the book un-put-down-able, but also describes him as her Faith in Action Partner — the unwavering support system that allowed her to reach for the stars.
+                      Look forward to the special section on experiential boardroom lessons for the younger generation of career women. Stay a while on the page where the 60-year-old author pens a letter to her teenage self. Mind-shifting — in my opinion, it's an exercise we all should do from time to time.
+                      In this book, you see consistency in the fruit of a life lived with purpose. It is a powerful reminder of the leverage that comes with giving generously to man and God. As it starts to make a landing, the pages showcase why retirement shouldn't be an ending but rather a new beginning — her new role as Executive Vice Chairman at First Tricon Limited, her fledgling textile manufacturing venture, and a chance to further take her love for women and youth empowerment to the next level.
+                      This book is a roadmap of many sorts for anyone who believes that their best chapters are still being written, and that a true legacy is built one faithful, family-centered step at a time. Welcome to Kemi's world of Faith, Family and Factory.
+                    </>
+                  )}
+
                 </p>
+                {/* Toggle Link */}
+                <button
+                  onClick={() => setExpanded(!expanded)}
+                  className={` ${sora.className} mt-4 flex gap-2 text-[#C0840B] text-sm hover:underline font-medium hover:underline`}
+                >
+                  {expanded ? "Show Less" : "Read Full Review"}
+                  {expanded ? (
+                    <FaChevronUp className="text-sm align-middle" />
+                  ) : (
+                    <FaChevronDown className="text-sm align-bottom" />
+                  )}
+                </button>
               </div>
             </div>
           </div>
@@ -397,56 +420,56 @@ export default function Home() {
 
       </main>
       <footer className="bg-[#240406] text-white p-15">
-  <div className="flex flex-col items-center justify-between gap-10 md:flex-row md:items-start md:gap-x-12 xl:gap-x-60">
+        <div className="flex flex-col items-center justify-between gap-10 md:flex-row md:items-start md:gap-x-12 xl:gap-x-60">
 
-    {/* Left Section */}
-    <div className="max-w-md flex flex-col items-center text-center md:items-start md:text-left">
-      <p className={` ${sora.className} mb-6 text-sm md:text-xl `}>
-        MOTO Foundation <span className="text-white/70">(Mutajero Oyekan; Teniola Olumuyiwa (MOTO) Foundation)
-          is the charity outlet of Mutajero Ventures Ltd, incorporated in April 1993.</span>
-      </p>
-      <div className="flex gap-x-3 justify-center md:justify-start">
-        <p className={`${fruances.className} text-sm mb-2 text-white/60 italic`}>Click any of these links to follow us:</p>
-      </div>
+          {/* Left Section */}
+          <div className="max-w-md flex flex-col items-center text-center md:items-start md:text-left">
+            <p className={` ${sora.className} mb-6 text-sm md:text-xl `}>
+              MOTO Foundation <span className="text-white/70">(Mutajero Oyekan; Teniola Olumuyiwa (MOTO) Foundation)
+                is the charity outlet of Mutajero Ventures Ltd, incorporated in April 1993.</span>
+            </p>
+            <div className="flex gap-x-3 justify-center md:justify-start">
+              <p className={`${fruances.className} text-sm mb-2 text-white/60 italic`}>Click any of these links to follow us:</p>
+            </div>
 
-      <div className="flex gap-4 text-2xl mb-8 justify-center md:justify-start">
-        <a href="https://instagram.com" aria-label="Instagram"><FaInstagram /></a>
-        <a href="https://facebook.com" aria-label="Facebook"><FaFacebook /></a>
-        <a href="https://x.com" aria-label="X"><FaXTwitter /></a>
-      </div>
-    </div>
+            <div className="flex gap-4 text-2xl mb-8 justify-center md:justify-start">
+              <a href="https://instagram.com" aria-label="Instagram"><FaInstagram /></a>
+              <a href="https://facebook.com" aria-label="Facebook"><FaFacebook /></a>
+              <a href="https://x.com" aria-label="X"><FaXTwitter /></a>
+            </div>
+          </div>
 
-    {/* middles section */}
-    <nav className={`${fruances.className} flex flex-col gap-3 flex-1 items-center text-center md:items-start md:text-left justify-center`}>
-      <Link href="#about" className="text-[#E6E6E6]/60">About</Link>
-      <Link href="#about" className="text-[#E6E6E6]/60">What's Inside</Link>
-      <Link href="#about" className="text-[#E6E6E6]/60">Message</Link>
-    </nav>
+          {/* middles section */}
+          <nav className={`${fruances.className} flex flex-col gap-3 flex-1 items-center text-center md:items-start md:text-left justify-center`}>
+            <Link href="#about" className="text-[#E6E6E6]/60">About</Link>
+            <Link href="#about" className="text-[#E6E6E6]/60">What's Inside</Link>
+            <Link href="#about" className="text-[#E6E6E6]/60">Message</Link>
+          </nav>
 
-    {/* Right Section */}
-    <div className="flex flex-col items-center">
-      <p className={`${fruances.className} text-sm mb-3 text-[#F9F5EE]`}>Scan the QR to get your free copy here.</p>
-      <div className="mx-auto flex aspect-[283/270] w-full max-w-[170px] items-center justify-center rounded-[8px] border-[3px] border-[#240406] bg-white px-[18px] py-[14px] md:px-[28px]">
-        <QRCode
-          value={pdfUrl}
-          size={220}
-          fgColor="#240406"
-          bgColor="#FFFFFF"
-        />
-      </div>
-    </div>
-  </div>
+          {/* Right Section */}
+          <div className="flex flex-col items-center">
+            <p className={`${fruances.className} text-sm mb-3 text-[#F9F5EE]`}>Scan the QR to get your free copy here.</p>
+            <div className="mx-auto flex aspect-[283/270] w-full max-w-[170px] items-center justify-center rounded-[8px] border-[3px] border-[#240406] bg-white px-[18px] py-[14px] md:px-[28px]">
+              <QRCode
+                value={pdfUrl}
+                size={220}
+                fgColor="#240406"
+                bgColor="#FFFFFF"
+              />
+            </div>
+          </div>
+        </div>
 
-  {/* Bottom Legal Section */}
-  <div className={`${sora.className} mt-8 flex flex-col items-center justify-between gap-4 border-t border-[#D9D9D9]/10 pt-4 text-center text-sm text-white/50 md:flex-row md:items-center md:text-left md:gap-0`}>
-    <p>© 2026 New Dawn, Same fire. All rights reserved.</p>
-    <div className="flex gap-4 flex-wrap justify-center">
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms Of Service</a>
-      <a href="/cookies">Cookies Policy</a>
-    </div>
-  </div>
-</footer>
+        {/* Bottom Legal Section */}
+        <div className={`${sora.className} mt-8 flex flex-col items-center justify-between gap-4 border-t border-[#D9D9D9]/10 pt-4 text-center text-sm text-white/50 md:flex-row md:items-center md:text-left md:gap-0`}>
+          <p>© 2026 New Dawn, Same fire. All rights reserved.</p>
+          <div className="flex gap-4 flex-wrap justify-center">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms Of Service</a>
+            <a href="/cookies">Cookies Policy</a>
+          </div>
+        </div>
+      </footer>
 
       {isRequestModalOpen ? (
         <div
