@@ -91,7 +91,7 @@ export default function Home() {
           <span className="text-[#C0840B80]"><IoIosStar /></span ><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span>
         </div>
         <div className="px-4 text-center md:px-0">
-          <h1 className={`${fruances.className} text-[40px] leading-[44px] text-center md:text-[72px] md:leading-[72px]`}><span className="text-[#0F172A]">NEW DAWN,</span> <span className="text-[#C0840B]"><i>SAME FIRE</i></span></h1>
+          <h1 className={`${fruances.className} text-2xl leading-[44px] font-semibold text-center md:text-[72px] md:leading-[72px]`}><span className="text-[#280506]">NEW DAWN,</span> <span className="text-[#C0840B]"><i>SAME FIRE</i></span></h1>
           <p className={`${sora.className} mx-auto mt-4 max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
             Thank you for being part of this special celebration. As a token of appreciation, please enjoy this complimentary copy of New Dawn, Same Fire.
           </p>
@@ -200,8 +200,17 @@ export default function Home() {
 
           </div>
 
-          <div className="grid grid-cols-1 gap-8 pt-10 md:grid-cols-2">
-            <div className="flex justify-center items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 ">
+            <div className="hidden md:flex md:order-2 flex justify-center items-center h-full">
+              <Image
+                src="/kemi.png"
+                alt="New Dawn, Same Fire"
+                className="w-full h-auto max-w-md rounded-xl object-cover object-center"
+                width={400}
+                height={600}
+              />
+            </div>
+            <div className="md:order-2 flex justify-center items-center h-full">
               <Image
                 src="/kemi_new_dawn.png"
                 alt="New Dawn, Same Fire"
@@ -212,7 +221,7 @@ export default function Home() {
             </div>
             <div className="bg-[#FFFFFF] shadow-lg rounded-lg p-3 flex flex-col items-center h-full space-y-3">
               <div className="bg-[#F5F5F5] justify-center rounded-xl p-3 text-center md:px-[10%]">
-                <h3 className={`${fruances.className} italic text-sm font-bold md:text-[36px] md:leading-[54px]`}>
+                <h3 className={`${fruances.className} italic text-sm font-bold md:text-xl `}>
                   "A conversation with a soul that refused to stay down."</h3>
               </div>
               <div className="bg-[#F5F5F5] rounded-xl p-3 text-start">
@@ -305,7 +314,7 @@ export default function Home() {
             {/* Message */}
             <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#1B5E35]`}>MORE BOOKS</h2>
             <div className="w-full px-0 md:px-[10%]">
-              <h3 className={`${fruances.className} text-[18px] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}><i>More from Kemi Olumuyiwa</i> </h3>
+              <h3 className={`${fruances.className} italic text-[18px] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}>More from Kemi Olumuyiwa</h3>
               <p className={` ${sora.className} mx-auto max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
                 A collection of books that continue to inspire growth, purpose and meaningful living.
               </p>
@@ -357,7 +366,7 @@ export default function Home() {
         <section>
         </section>
 
-        <section className="flex flex-col md:flex-row items-center gap-3 md:gap-10 p-10 bg-[#F9F5EE] rounded-2xl">
+        <section className="flex flex-col md:flex-row items-center gap-3 md:gap-10 p-10 px-25 bg-[#F9F5EE] rounded-2xl">
 
           {/* Headings - always first */}
           <div className="w-full text-center md:hidden">
