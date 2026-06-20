@@ -46,7 +46,7 @@ export default function Home() {
 
   return (
     <>
-      <header className={`bg-[#F9F5EE] ${fruances.className} flex items-center justify-between px-4 py-4 md:hidden`}>
+      <header id="home" className={`bg-[#F9F5EE] ${fruances.className} flex items-center justify-between px-4 py-4 md:hidden`}>
         <span className={`${dancing.className} text-xl font-bold text-[#280506] italic`}>Kemi Olumuyiwa</span>
         <details className="relative">
           <summary className="list-none cursor-pointer rounded-md p-2 text-[#0F172A] [&::-webkit-details-marker]:hidden">
@@ -55,8 +55,8 @@ export default function Home() {
           <div className="absolute right-0 top-full z-20 mt-3 w-56 rounded-lg border border-[#E5E7EB] bg-white p-4 shadow-lg">
             <nav className="flex flex-col gap-3 text-sm text-[#555555]">
               <Link href="#about">About</Link>
-              <Link href="#about">What's Inside</Link>
-              <Link href="#about">Message</Link>
+              <Link href="#what-inside">What's Inside</Link>
+              <Link href="#">Message</Link>
             </nav>
             <a
               href="https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf"
@@ -75,8 +75,8 @@ export default function Home() {
       <header className={` hidden md:flex bg-[#F9F5EE] ${fruances.className} flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:px-8`}>
         <nav className="flex flex-wrap justify-center gap-4 md:flex-1 md:gap-5">
           <Link href="#about" className="text-[#555555]">About</Link>
-          <Link href="#about" className="text-[#555555]">What's Inside</Link>
-          <Link href="#about" className="text-[#555555]">Message</Link>
+          <Link href="#" className="text-[#555555]">What's Inside</Link>
+          <Link href="#" className="text-[#555555]">Message</Link>
         </nav>
         <a href="#qr-section" className="bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-3 text-white md:mr-16 md:w-auto md:px-7 md:py-4">
           <span><MdQrCodeScanner /></span><span className="text-[#FFFFFF]">Scan QR for free soft copy</span>
@@ -131,7 +131,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full bg-white px-4 py-12 text-center md:px-[10%] md:py-[10%]">
+        <section id="about" className="w-full bg-white px-4 py-12 text-center md:px-[10%] md:py-[10%]">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
             <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#1B5E35]`}>ABOUT THE BOOK</h2>
             <div className="w-full px-0 md:px-[10%]">
@@ -185,7 +185,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full bg-[#F9F5EE] px-4 py-12 text-center md:px-[10%] md:py-[10%]">
+        <section id="what-inside" className="w-full bg-[#F9F5EE] px-4 py-12 text-center md:px-[10%] md:py-[10%]">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
             {/* Author Image */}
 
@@ -257,7 +257,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full bg-[#240406] px-4 py-12 text-center md:px-[10%] md:py-[10%]">
+        <section id="qr-section" className="w-full bg-[#240406] px-4 py-12 text-center md:px-[10%] md:py-[10%]">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
             <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#7CD9A0]`}>YOUR EXCLUSIVE GIFT</h2>
             <div className="w-full px-0 text-center md:px-[10%]">
@@ -268,7 +268,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div id="qr-section" className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {/* Complimentary Copy */}
             <div className="bg-[#F9F5EE] shadow-lg rounded-lg p-6 flex flex-col h-full text-left">
               <div className="bg-[#260406] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
@@ -458,6 +458,7 @@ export default function Home() {
 
           {/* middles section */}
           <nav className={`${fruances.className} flex flex-col gap-3 flex-1 items-center text-center md:items-start md:text-left justify-center`}>
+            <Link href="#home" className="text-[#E6E6E6]/60">Home</Link>
             <Link href="#about" className="text-[#E6E6E6]/60">About</Link>
             <Link href="#about" className="text-[#E6E6E6]/60">What's Inside</Link>
             <Link href="#about" className="text-[#E6E6E6]/60">Message</Link>
