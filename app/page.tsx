@@ -255,9 +255,9 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
                 height={600}
               />
             </div>
-            <div className="bg-[#FFFFFF] shadow-lg rounded-xl p-3 flex flex-col items-center h-full space-y-3 md:order-1">
-              <div className="bg-[#F5F5F5] justify-center rounded-xl p-3 text-center md:px-[10%]">
-                <h3 className={`${fruances.className} italic w-full text-sm font-bold md:text-xl`}>
+            <div className="bg-[#FFFFFF] shadow-lg rounded-2xl p-3 flex flex-col items-center h-full space-y-3 md:order-1">
+              <div className="bg-[#F5F5F5] w-full justify-center rounded-xl p-3 text-center md:px-[10%]">
+                <h3 className={`${fruances.className} italic text-sm font-bold md:text-xl`}>
                   "A conversation with a soul that refused to stay down."</h3>
               </div>
               <div className="bg-[#F5F5F5] rounded-xl p-3 text-start flex-1">
