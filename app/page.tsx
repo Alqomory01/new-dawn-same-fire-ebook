@@ -255,7 +255,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
                 height={600}
               />
             </div>
-            <div className="bg-[#FFFFFF] shadow-lg rounded-lg p-3 flex flex-col items-center h-full space-y-3 md:order-1">
+            <div className="bg-[#FFFFFF] shadow-lg rounded-xl p-3 flex flex-col items-center h-full space-y-3 md:order-1">
               <div className="bg-[#F5F5F5] justify-center rounded-xl p-3 text-center md:px-[10%]">
                 <h3 className={`${fruances.className} italic w-full text-sm font-bold md:text-xl`}>
                   "A conversation with a soul that refused to stay down."</h3>
@@ -450,31 +450,31 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
                 <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                   <GiOpenBook className="text-[#C0840B] text-xl" />
                 </div>
-                <p>Author</p>
+                <p className="text-[#555555]">Author</p>
               </span>
               <span className="flex flex-col items-center gap-2">
                 <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                   <MdKeyboardVoice className="text-[#C0840B] text-xl" />
                 </div>
-                <p>Speaker</p>
+                <p className="text-[#555555]">Speaker</p>
               </span>
               <span className="flex flex-col items-center gap-2">
                 <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                   <MdGroups2 className="text-[#C0840B] text-xl" />
                 </div>
-                <p>Mentor</p>
+                <p className="text-[#555555]">Mentor</p>
               </span>
               <span className="flex flex-col items-center gap-2">
                 <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                   <GrAggregate className="text-[#C0840B] text-xl" />
                 </div>
-                <p>Leader</p>
+                <p className="text-[#555555]">Leader</p>
               </span>
               <span className="flex flex-col items-center gap-2">
                 <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                   <FaHandHoldingWater className="text-[#C0840B] text-xl" />
                 </div>
-                <p><span className="hidden md:inline">Community </span>Impact</p>
+                <p className="text-[#555555]"><span className="hidden md:inline">Community </span>Impact</p>
               </span>
             </div>
           </div>
