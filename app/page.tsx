@@ -445,32 +445,32 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
             </p>
 
             {/* Icons Section */}
-            <div className="flex flex-wrap items-start justify-center gap-4 text-sm font-medium text-gray-800 md:justify-between">
-              <span className="flex flex-col items-center">
+            <div className={`${sora.className} grid grid-cols-5 items-start text-center justify-center gap-4 text-sm font-medium text-gray-800 md:justify-between`}>
+              <span className="flex flex-col items-center gap-2">
                 <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                   <GiOpenBook className="text-[#C0840B] text-xl" />
                 </div>
                 <p>Author</p>
               </span>
-              <span className="flex flex-col items-center">
+              <span className="flex flex-col items-center gap-2">
                 <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                   <MdKeyboardVoice className="text-[#C0840B] text-xl" />
                 </div>
                 <p>Speaker</p>
               </span>
-              <span className="flex flex-col items-center">
+              <span className="flex flex-col items-center gap-2">
                 <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                   <MdGroups2 className="text-[#C0840B] text-xl" />
                 </div>
                 <p>Mentor</p>
               </span>
-              <span className="flex flex-col items-center">
+              <span className="flex flex-col items-center gap-2">
                 <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                   <GrAggregate className="text-[#C0840B] text-xl" />
                 </div>
                 <p>Leader</p>
               </span>
-              <span className="flex flex-col items-center">
+              <span className="flex flex-col items-center gap-2">
                 <div className="bg-[#C0840B1A] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0">
                   <FaHandHoldingWater className="text-[#C0840B] text-xl" />
                 </div>
