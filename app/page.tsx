@@ -82,7 +82,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
 
   return (
     <>
-      <header id="home" className={`bg-[#F9F5EE] ${fruances.className} flex items-center justify-between px-4 py-4 md:hidden`}>
+      <header id="home" className={`bg-[#F9F5EE] ${fruances.className} fixed top-0 right-0 left-0 z-50 flex items-center justify-between px-4 py-4 md:hidden`}>
         <span className={`${dancing.className} text-xl font-bold text-[#280506] italic`}>Kemi Olumuyiwa</span>
         <details className="relative">
           <summary className="list-none cursor-pointer rounded-md p-2 text-[#0F172A] [&::-webkit-details-marker]:hidden">
@@ -135,7 +135,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
 
         <div className={`mt-12 flex w-full flex-col gap-3 px-4 ${fruances.className} md:w-auto md:flex-row md:px-0`}>
           <a href="https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf" className="bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
-            <span><MdQrCodeScanner /></span><span className="text-[#FFFFFF]">Download eBook</span>
+            <span><MdQrCodeScanner /></span><span className="text-[#FFFFFF]">Download Free Soft Copy</span>
           </a>
           <a href="#" onClick={openRequestModal} className="bg-[#260406] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white/90 md:w-auto md:px-7">
             <span><GiOpenBook /></span> <span>Request A free hard Copy</span>
