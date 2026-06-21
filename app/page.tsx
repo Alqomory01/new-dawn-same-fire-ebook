@@ -311,7 +311,8 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
                 <TbDownload className="text-white text-xl" />
               </div>
               <h3 className={`${fruances.className} text-lg my-4 md:text-xl`}>Download Your free Digital Copy</h3>
-              <p className={`${sora.className} text-base mb-4 text-[#555555] md:text-lg`}>Scan the QR code to instantly access your digital copy</p>
+              <p className={`${sora.className} md:hidden text-base mb-4 text-[#555555] md:text-lg`}>As a guest of this celebration, you have exclusive access to the digital edition.</p>
+              <p className={`${sora.className} hidden md:block text-base mb-4 text-[#555555] md:text-lg`}>Scan the QR code to instantly access your digital copy</p>
               <div className=" hidden md:flex mx-auto aspect-[283/270] w-full max-w-[283px] items-center justify-center rounded-[8px] border-[3px] border-[#240406] bg-white px-[18px] py-[14px] md:px-[28px]">
                 <QRCode
                   value={pdfUrl}
