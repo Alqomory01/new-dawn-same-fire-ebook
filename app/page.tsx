@@ -119,7 +119,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
         </a>
       </header>
 
-      <main className="flex flex-col items-center overflow-x-hidden">
+      <main className="flex flex-col items-center overflow-x-hidden mt-17 md:pt-0">
         <div className="mt-8 flex h-[36px] w-fit max-w-[92vw] items-center justify-center gap-[2px] whitespace-nowrap rounded-[30px] border border-[#E5E7EB] bg-white px-[18px] py-[6px] md:mt-10 md:w-[232px] md:px-[25px]">
           <span className={`${dancing.className} text-green-600 italic font-dancing`}>
             Exclusive Access
@@ -135,7 +135,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
 
         <div className={`mt-12 flex w-full flex-col gap-3 px-4 ${fruances.className} md:w-auto md:flex-row md:px-0`}>
           <a href="https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf" className="bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
-            <span><MdQrCodeScanner /></span><span className="text-[#FFFFFF]">Download Free Soft Copy</span>
+            <span><RxDownload /></span><span className="text-[#FFFFFF]">Download Free Soft Copy</span>
           </a>
           <a href="#" onClick={openRequestModal} className="bg-[#260406] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white/90 md:w-auto md:px-7">
             <span><GiOpenBook /></span> <span>Request A free hard Copy</span>
@@ -221,7 +221,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
           </div>
         </section>
 
-        <section id="what-inside" className="w-full bg-[#F9F5EE] px-4 py-12 text-center md:px-[10%] md:py-[10%]">
+        <section id="what-inside" className="w-full mb-10 bg-[#F9F5EE] px-4 py-12 text-center md:px-[10%] md:py-[10%]">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
             {/* Author Image */}
 
@@ -257,7 +257,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
             </div>
             <div className="bg-[#FFFFFF] shadow-lg rounded-lg p-3 flex flex-col items-center h-full space-y-3 md:order-1">
               <div className="bg-[#F5F5F5] justify-center rounded-xl p-3 text-center md:px-[10%]">
-                <h3 className={`${fruances.className} italic text-sm font-bold md:text-xl `}>
+                <h3 className={`${fruances.className} italic w-full text-sm font-bold md:text-xl`}>
                   "A conversation with a soul that refused to stay down."</h3>
               </div>
               <div className="bg-[#F5F5F5] rounded-xl p-3 text-start flex-1">
@@ -293,7 +293,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
           </div>
         </section>
 
-        <section className="w-full bg-[#240406] px-4 py-12 text-center md:px-[10%] md:py-[10%]">
+        <section className="w-full bg-[#240406] mb-10 px-4 py-12 text-center md:px-[10%] md:py-[10%]">
           <div id="qr-section" className="mx-auto flex max-w-5xl flex-col items-center">
             <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#7CD9A0]`}>YOUR EXCLUSIVE GIFT</h2>
             <div className="w-full px-0 text-center md:px-[10%]">
@@ -312,13 +312,23 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
               </div>
               <h3 className={`${fruances.className} text-lg my-4 md:text-xl`}>Download Your free Digital Copy</h3>
               <p className={`${sora.className} text-base mb-4 text-[#555555] md:text-lg`}>Scan the QR code to instantly access your digital copy</p>
-              <div className="mx-auto flex aspect-[283/270] w-full max-w-[283px] items-center justify-center rounded-[8px] border-[3px] border-[#240406] bg-white px-[18px] py-[14px] md:px-[28px]">
+              <div className=" hidden md:flex mx-auto aspect-[283/270] w-full max-w-[283px] items-center justify-center rounded-[8px] border-[3px] border-[#240406] bg-white px-[18px] py-[14px] md:px-[28px]">
                 <QRCode
                   value={pdfUrl}
                   size={220}
                   fgColor="#240406"
                   bgColor="#FFFFFF"
                 />
+              </div>
+              <div className="md:hidden">
+              <ul className="text-gray-600 mb-6">
+                <li className="flex items-center gap-x-2 mb-2"><span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Premium Print</span></li>
+                <li className="flex items-center gap-x-2 mb-2"><span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Collectible Edition</span></li>
+                <li className="flex items-center gap-x-2 mb-2"> <span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Gift Option</span></li>
+              </ul>
+                <a href="https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf" className="bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
+                  <span><MdQrCodeScanner /></span><span className="text-[#FFFFFF]">Download Free Soft Copy</span>
+                </a>
               </div>
 
             </div>
@@ -343,7 +353,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
           </div>
 
         </section>
-        <section className="w-full bg-white px-4 py-12 text-center md:px-[10%] md:py-[10%]">
+        <section className="w-full mb-10 bg-white px-4 py-12 text-center md:px-[10%] md:py-[10%]">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
             {/* Author Image */}
 
@@ -472,7 +482,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
         </section>
 
       </main>
-      <footer className="bg-[#240406] text-white p-15 mt-5">
+      <footer className="bg-[#240406] text-white p-15">
         <div className="flex flex-col items-center justify-between gap-10 md:flex-row md:items-start md:gap-x-12 xl:gap-x-60">
 
           {/* Left Section */}
