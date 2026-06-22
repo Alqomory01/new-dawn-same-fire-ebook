@@ -128,7 +128,8 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
         )}
       </header>
 
-      <header className={` hidden md:flex bg-[#F9F5EE] ${fruances.className} flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:px-8`}>
+      <header className={` hidden md:flex bg-[#F9F5EE] ${fruances.className} flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:px-20`}>
+        <span className={`${dancing.className} text-xl font-bold text-[#280506] italic`}>Kemi Olumuyiwa</span>
         <nav className="flex flex-wrap justify-center gap-4 md:flex-1 md:gap-5">
           <Link href="#about" className="text-[#555555]">About</Link>
           <Link href="#review" className="text-[#555555]">Review</Link>
@@ -266,21 +267,21 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
                 height={379}
               />
             </div>
-            <div className="md:order-3 items-stretch flex justify-center items-center self-start">
+            <div className="md:order-3 items-stretch flex justify-center max-w-xl items-center self-start">
               <Image
                 src="/kemi_new_dawn.png"
                 alt="New Dawn, Same Fire"
                 className="h-[379px] max-w-full rounded-xl object-cover object-center"
-                width={348}
+                width={400}
                 height={379}
               />
             </div>
-            <div id="story" className="bg-[#FFFFFF] shadow-lg rounded-2xl p-3 flex flex-col md:col-span-2 items-center md:w-[625px] md:order-1" style={{ padding: "14px 19px 21px 20px", gap: "13px" }}>
+            <div id="story" className="bg-[#FFFFFF] shadow-lg rounded-2xl p-3 flex flex-col md:col-span-2 items-center md:h-[385px] md:w-[625px] md:order-1" style={{ padding: "14px 19px 21px 20px", gap: "13px" }}>
               <div className="bg-[#F5F5F5] w-full justify-center rounded-xl p-3 text-center md:px-[10%]">
                 <h3 className={`${fruances.className} italic text-sm font-bold md:text-xl`}>
                   "A conversation with a soul that refused to stay down."</h3>
               </div>
-              <div className={`bg-[#F5F5F5] rounded-xl p-3 text-start flex-1 ${expanded ? "overflow-y-auto" : "overflow-y-hidden"}`}>
+              <div className="bg-[#F5F5F5] rounded-xl p-3 text-start flex-1 md:h-0 overflow-y-auto">
                 <p className={` ${sora.className} text-sm leading-relaxed text-[#555555] md:text-base`}>
                   New Dawn, Same Fire: A Journey of Unfiltered Grace takes you through the world of corporate boardrooms and the quiet, heavy moments of a home held together by faith and resolve.
                   On its pages you feel the weight of every pillar that stood firm and the courage behind every support that changed it all. At the very heart of this journey is a celebration of the woman who started it all: the author's mother. This book beautifully
