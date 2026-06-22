@@ -53,6 +53,7 @@ function useCountUp(target: number, duration: number = 1500, start: boolean = fa
 }
 export default function Home() {
   const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pdfUrl = "https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf"
 
   const statsRef = useRef<HTMLDivElement>(null);
@@ -86,14 +87,31 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
     <>
       <header id="home" className={`bg-[#F9F5EE] ${fruances.className} fixed top-0 right-0 left-0 z-50 flex items-center justify-between px-4 py-4 md:hidden`}>
         <span className={`${dancing.className} text-xl font-bold text-[#280506] italic`}>Kemi Olumuyiwa</span>
-        <details className="relative">
-          <summary className="list-none cursor-pointer rounded-md p-2 text-[#0F172A] [&::-webkit-details-marker]:hidden">
-            <FaBars className="text-xl" />
-          </summary>
+        
+        {/* Hamburger toggle */}
+        <button
+          onClick={() => setIsMenuOpen(true)}
+          className="rounded-md p-2 text-[#0F172A]"
+          aria-label="Open menu"
+        >
+          <FaBars className="text-xl" />
+        </button>
+        {/* Dropdown menu */}
+        {isMenuOpen && (
           <div className="absolute right-0 top-full z-20 mt-3 w-56 rounded-lg border border-[#E5E7EB] bg-white p-4 shadow-lg">
+            {/* Close button inside menu */}
+            <div className="flex justify-end">
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="text-[#555555] hover:text-[#C0840B]"
+                aria-label="Close menu"
+              >
+                ✕
+              </button>
+            </div>
             <nav className="flex flex-col gap-3 text-sm text-[#555555]">
               <Link href="#about">About</Link>
-              <Link href="#whats-inside">What's Inside</Link>
+              <Link href="#review">Review</Link>
               <Link href="#books">Books</Link>
             </nav>
             <a
@@ -107,13 +125,13 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
             </a>
 
           </div>
-        </details>
+        )}
       </header>
 
       <header className={` hidden md:flex bg-[#F9F5EE] ${fruances.className} flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:px-8`}>
         <nav className="flex flex-wrap justify-center gap-4 md:flex-1 md:gap-5">
           <Link href="#about" className="text-[#555555]">About</Link>
-          <Link href="#whats-inside" className="text-[#555555]">What's Inside</Link>
+          <Link href="#review" className="text-[#555555]">Review</Link>
           <Link href="#books" className="text-[#555555]">Books</Link>
         </nav>
         <a href="#qr-section" className="bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-3 text-white md:mr-16 md:w-auto md:px-7 md:py-4">
@@ -223,7 +241,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
           </div>
         </section>
 
-        <section id="whats-inside" className="w-full mb-10 bg-[#F9F5EE] px-4 py-12 text-center md:px-[10%] md:py-[10%]">
+        <section id="review" className="w-full mb-10 bg-[#F9F5EE] px-4 py-12 text-center md:px-[10%] md:py-[10%]">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
             {/* Author Image */}
 
@@ -422,7 +440,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
         <section>
         </section>
 
-        <section className="flex flex-col mb-10 px-10 md:flex-row items-center md:px-25 gap-10 p-10 bg-[#F9F5EE] rounded-2xl">
+        <section className="flex flex-col mb-10 px-10 md:flex-row items-center md:px-25 gap-4 p-10 bg-[#F9F5EE]">
 
           {/* Headings - always first */}
           <div className="w-full text-center md:hidden">
@@ -492,7 +510,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
         </section>
 
       </main>
-      <footer className="bg-[#240406] text-white p-15">
+      <footer className="bg-[#240406] text-white p-8 md:p-15">
         <div className="flex flex-col items-center justify-between gap-10 md:flex-row md:items-start md:gap-x-12 xl:gap-x-60">
 
           {/* Left Section */}
@@ -516,7 +534,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
           <nav className={`${fruances.className} flex flex-col gap-3 flex-1 items-center text-center md:items-start md:text-left justify-center`}>
             <Link href="#home" className="text-[#E6E6E6]/60">Home</Link>
             <Link href="#about" className="text-[#E6E6E6]/60">About</Link>
-            <Link href="#whats-inside" className="text-[#E6E6E6]/60">What's Inside</Link>
+            <Link href="#review" className="text-[#E6E6E6]/60">Review</Link>
             <Link href="#books" className="text-[#E6E6E6]/60">Books</Link>
           </nav>
 
@@ -535,9 +553,9 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
         </div>
 
         {/* Bottom Legal Section */}
-        <div className={`${sora.className} mt-8 flex flex-col items-center justify-between gap-4 border-t border-[#D9D9D9]/10 pt-4 text-center text-sm text-white/50 md:flex-row md:items-center md:text-left md:gap-0`}>
+        <div className={`${sora.className} w-full mt-8 flex flex-col items-center justify-between gap-4 md:border-t border-[#D9D9D9]/10 pt-4 text-center text-sm text-white/50 md:flex-row md:items-center md:text-left md:gap-0`}>
           <p>© 2026 New Dawn, Same fire. All rights reserved.</p>
-          <div className="flex gap-4 flex-wrap justify-center">
+          <div className="flex gap-4 flex-wrap justify-center border-t border-[#D9D9D9]/10 pt-4 md:border-t-0 md:pt-0">
             <a href="/privacy">Privacy Policy</a>
             <a href="/terms">Terms Of Service</a>
             <a href="/cookies">Cookies Policy</a>
