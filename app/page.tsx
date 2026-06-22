@@ -158,7 +158,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
             <span><TbDownload /></span><span className="text-[#FFFFFF]">Download Free Soft Copy</span>
           </a>
           <a href="#" onClick={openRequestModal} className="bg-[#260406] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white/90 md:w-auto md:px-7">
-            <span><GiOpenBook /></span> <span>Request A free hard Copy</span>
+            <span><GiOpenBook /></span> <span>Request A Free Hard Copy</span>
           </a>
         </div>
         <div className="relative mt-8 h-[52vh] w-full overflow-hidden md:h-[205vh]">
@@ -256,31 +256,31 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
 
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 items-stretch ">
-            <div className="hidden md:flex md:order-2 items-stretch flex justify-center items-center h-full">
+          <div className="grid grid-cols-1 md:flex md:flex-row md:items-stretch gap-8 pt-10  ">
+            <div className="hidden md:flex md:order-2 flex justify-center items-center self-start">
               <Image
                 src="/kemi.png"
                 alt="New Dawn, Same Fire"
-                className="w-full h-auto max-w-md rounded-xl object-cover object-center"
-                width={400}
-                height={600}
+                className="h-[379px] max-w-full rounded-xl object-cover object-center"
+                width={285}
+                height={379}
               />
             </div>
-            <div className="md:order-3 items-stretch flex justify-center items-center h-full">
+            <div className="md:order-3 items-stretch flex justify-center items-center self-start">
               <Image
                 src="/kemi_new_dawn.png"
                 alt="New Dawn, Same Fire"
-                className="w-full h-auto max-w-md rounded-xl object-cover object-center"
-                width={400}
-                height={600}
+                className="h-[379px] max-w-full rounded-xl object-cover object-center"
+                width={348}
+                height={379}
               />
             </div>
-            <div id="story" className="bg-[#FFFFFF] shadow-lg rounded-2xl p-3 flex flex-col items-center h-full space-y-3 md:order-1">
+            <div id="story" className="bg-[#FFFFFF] shadow-lg rounded-2xl p-3 flex flex-col md:col-span-2 items-center md:w-[625px] md:order-1 md:h-[385px] overflow-hidden" style={{ padding: "14px 19px 21px 20px", gap: "13px" }}>
               <div className="bg-[#F5F5F5] w-full justify-center rounded-xl p-3 text-center md:px-[10%]">
-                <h3 className={`${fruances.className} italic text-xs font-bold md:text-xl`}>
+                <h3 className={`${fruances.className} italic text-sm font-bold md:text-xl`}>
                   "A conversation with a soul that refused to stay down."</h3>
               </div>
-              <div className="bg-[#F5F5F5] rounded-xl p-3 text-start flex-1">
+              <div className={`bg-[#F5F5F5] rounded-xl p-3 text-start flex-1 ${expanded ? "overflow-y-auto" : "overflow-y-hidden"}`}>
                 <p className={` ${sora.className} text-sm leading-relaxed text-[#555555] md:text-base`}>
                   New Dawn, Same Fire: A Journey of Unfiltered Grace takes you through the world of corporate boardrooms and the quiet, heavy moments of a home held together by faith and resolve.
                   On its pages you feel the weight of every pillar that stood firm and the courage behind every support that changed it all. At the very heart of this journey is a celebration of the woman who started it all: the author's mother. This book beautifully
@@ -373,10 +373,10 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
                 <li className="flex items-center gap-x-2 mb-2"><span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Collectible Edition</span></li>
                 <li className="flex items-center gap-x-2 mb-2"> <span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Gift Option</span></li>
               </ul>
-              <button type="button" onClick={openRequestModal} className={`${fruances.className} mt-auto flex w-full items-center justify-center gap-4 rounded bg-[#260406] px-5 py-4 text-white md:h-[64px] md:w-auto md:px-7`}>
+              <a type="button" onClick={openRequestModal} className={`${fruances.className} mt-auto flex w-full items-center justify-center gap-4 rounded bg-[#260406] px-5 py-4 text-white md:h-[64px] md:w-auto md:px-7`}>
                 <span className="text-xl"><GiOpenBook /></span>
-                <span>Request A free hard Copy</span>
-              </button>
+                <span>Request A Free Hard Copy</span>
+              </a>
             </div>
           </div>
 
