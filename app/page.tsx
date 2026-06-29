@@ -536,7 +536,7 @@ export default function Home() {
           </nav>
 
           {/* Right Section */}
-          <div className="flex flex-col items-center">
+          {/* <div className="flex flex-col items-center">
             <p className={`${fruances.className} text-sm mb-3 text-[#F9F5EE]`}>Scan the QR to get your free copy here.</p>
             <div className="mx-auto flex aspect-[283/270] w-full max-w-[170px] items-center justify-center rounded-[8px] border-[3px] border-[#240406] bg-white px-[18px] py-[14px] md:px-[28px]">
               <QRCode
@@ -546,7 +546,7 @@ export default function Home() {
                 bgColor="#FFFFFF"
               />
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Legal Section */}
