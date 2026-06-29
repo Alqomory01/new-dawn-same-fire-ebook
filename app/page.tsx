@@ -1,7 +1,7 @@
 "use client";
 
-import { useState,  type FormEvent } from "react";
-import {useEffect, useRef} from "react";
+import { useState, type FormEvent } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/router'
@@ -10,6 +10,7 @@ import { Dancing_Script } from "next/font/google"
 import { Fraunces } from "next/font/google"
 import { Sora } from "next/font/google"
 import { IoIosStar } from "react-icons/io";
+import { GiRoundStar } from "react-icons/gi";
 import { MdQrCodeScanner } from "react-icons/md";
 import { FaChevronUp } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa6";
@@ -57,24 +58,24 @@ export default function Home() {
   const pdfUrl = "https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf"
 
   const statsRef = useRef<HTMLDivElement>(null);
-const [hasAnimated, setHasAnimated] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting && !hasAnimated) {
-        setHasAnimated(true);
-      }
-    },
-    { threshold: 0.4 }
-  );
-  if (statsRef.current) observer.observe(statsRef.current);
-  return () => observer.disconnect();
-}, [hasAnimated]);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.4 }
+    );
+    if (statsRef.current) observer.observe(statsRef.current);
+    return () => observer.disconnect();
+  }, [hasAnimated]);
 
-const downloads = useCountUp(15020, 1500, hasAnimated);
-const readers   = useCountUp(20020, 1500, hasAnimated);
-const reviews   = useCountUp(16020, 1500, hasAnimated);
+  const downloads = useCountUp(15020, 1500, hasAnimated);
+  const readers = useCountUp(20020, 1500, hasAnimated);
+  const reviews = useCountUp(16020, 1500, hasAnimated);
   const [expanded, setExpanded] = useState(false);
   const openRequestModal = () => setIsRequestModalOpen(true);
   const closeRequestModal = () => setIsRequestModalOpen(false);
@@ -87,7 +88,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
     <>
       <header id="home" className={`bg-[#F9F5EE] ${fruances.className} fixed top-0 right-0 left-0 z-50 flex items-center justify-between px-4 py-4 md:hidden`}>
         <span className={`${dancing.className} text-xl font-bold text-[#280506] italic`}>Kemi Olumuyiwa</span>
-        
+
         {/* Hamburger toggle */}
         <button
           onClick={() => setIsMenuOpen(true)}
@@ -132,21 +133,21 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
         <span className={`${dancing.className} text-xl font-bold text-[#280506] italic`}>Kemi Olumuyiwa</span>
         <nav className="flex flex-wrap justify-center gap-4 md:flex-1 md:gap-5">
           <Link href="#about" className="text-[#555555]">About</Link>
-          <Link href="#review" className="text-[#555555]">Review</Link>
           <Link href="#books" className="text-[#555555]">Books</Link>
+          <Link href="#review" className="text-[#555555]">Review</Link>
         </nav>
-        <a href="#qr-section" className="bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-3 text-white md:mr-16 md:w-auto md:px-7 md:py-4">
-          <span><MdQrCodeScanner /></span><span className="text-[#FFFFFF]">Scan QR for free soft copy</span>
+        <a href="https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf" className="bg-[#280506] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
+          <span><TbDownload /></span><span className="text-[#FFFFFF]">Download Free Soft Copy</span>
         </a>
       </header>
 
       <main className="flex flex-col items-center overflow-x-hidden mt-17 md:pt-0">
-        <div className="mt-8 flex h-[36px] w-fit max-w-[92vw] items-center justify-center gap-[2px] whitespace-nowrap rounded-[30px] border border-[#E5E7EB] bg-white px-[18px] py-[6px] md:mt-10 md:w-[232px] md:px-[25px]">
+        {/* <div className="mt-8 flex h-[36px] w-fit max-w-[92vw] items-center justify-center gap-[2px] whitespace-nowrap rounded-[30px] border border-[#E5E7EB] bg-white px-[18px] py-[6px] md:mt-10 md:w-[232px] md:px-[25px]">
           <span className={`${dancing.className} text-green-600 italic font-dancing`}>
             Exclusive Access
           </span>
           <span className="text-[#C0840B80]"><IoIosStar /></span ><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span><span className="text-[#C0840B80]"><IoIosStar /></span>
-        </div>
+        </div> */}
         <div className="px-4 text-center md:px-0">
           <h1 className={`${fruances.className} text-2xl leading-[44px] font-semibold text-center md:text-[72px] md:leading-[72px]`}><span className="text-[#280506]">NEW DAWN,</span> <span className="text-[#C0840B]"><i>SAME FIRE</i></span></h1>
           <p className={`${sora.className} mx-auto mt-2 max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
@@ -158,7 +159,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
           <a href="https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf" className="bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
             <span><TbDownload /></span><span className="text-[#FFFFFF]">Download Free Soft Copy</span>
           </a>
-          <a href="#" onClick={openRequestModal} className="bg-[#260406] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white/90 md:w-auto md:px-7">
+          <a href="#" onClick={openRequestModal} className="bg-[#C0840B1A] flex w-full items-center justify-center border border-[#C0840B4D] gap-4 rounded px-5 py-4 text-[#280506] md:w-auto md:px-7">
             <span><GiOpenBook /></span> <span>Request A Free Hard Copy</span>
           </a>
         </div>
@@ -174,16 +175,19 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
         <section className="w-full bg-[#260406] py-4 px-4 text-center md:py-10 md:px-[25%]">
           <div className="grid grid-cols-3 gap-6 sm:grid-cols-3">
             <div>
-              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${downloads.toLocaleString()}+` : "15K+"}</h2>
+              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${downloads.toLocaleString()}+` : "200+"}</h2>
               <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>Downloads</p>
             </div>
             <div>
-              <h2 className={`${fruances.className} text-2xl  font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${readers.toLocaleString()}+` : "20K+"}</h2>
-              <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>Readers</p>
+              <h2 className={`${fruances.className} text-2xl  font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${readers.toLocaleString()}+` : "100%"}</h2>
+              <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>Authentic Reader feedack</p>
             </div>
             <div>
-              <h2 className={`${fruances.className} text-2xl font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${reviews.toLocaleString()}+` : "16K+"}</h2>
-              <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>5-star review</p>
+              <div className="flex items-center justify-center gap-1">
+                <h2 className={`${fruances.className} text-2xl font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${reviews.toLocaleString()}+` : "4.8"}</h2>
+                <span className="text-[#FFEECC] text-sm md:text-2xl"><GiRoundStar /></span>
+              </div>
+              <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>Average Rating</p>
             </div>
           </div>
         </section>
@@ -196,7 +200,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
                 <i>What Is <span>New Dawn, Same Fire</span> About?</i>
               </h3>
               <p className={`${sora.className} mx-auto mb-8 max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
-                This memoir explores the beauty of beginning again  while keeping the fire of purpose alive.
+                New Dawn, Same Fire is more than a memoir; it is a roadmap for anyone standing at the threshold of a new chapter.
               </p>
             </div>
 
@@ -206,35 +210,35 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
                   <div className="bg-[#C0840B] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0 my-[15px]">
                     <GiOpenBook className="text-white text-xl" />
                   </div>
-                  <div className="flex flex-col md:flex-row md:items-center pb-[15px]">
+                  <div className="flex flex-col md:items-start pb-[15px]">
                     <strong className="block text-2xl md:pb-[15px] md:text-3xl">136+ Pages</strong>
-                    <span className={`${sora.className} text-[#555555] md:pl-2`}>of inspiration</span>
+                    <span className={`${sora.className} text-[#555555]`}>Transformative insights and hard-earned wisdom from an inspirational woman.</span>
                   </div>
                 </li>
                 <li className="rounded bg-[#F9F5EE] pl-4 pr-4 text-left md:pl-6 md:pr-8">
                   <div className="bg-[#C0840B] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0 my-[15px]">
                     <GiSelfLove className="text-white text-xl" />
                   </div>
-                  <div className="flex flex-col md:flex-row md:items-center pb-[15px]">
+                  <div className="flex flex-col md:items-start pb-[15px]">
                     <strong className="block text-2xl md:pb-[15px] md:text-3xl">Personal Memoir</strong>
-                    <span className={`${sora.className} text-[#555555] md:pl-2`}>(a story of grace)</span>
+                    <span className={`${sora.className} text-[#555555]`}>An intimate journey- an account of discovering grace in the most unexpected places</span>
                   </div>
                 </li>
                 <li className="rounded bg-[#F9F5EE] pl-4 pr-4 text-left md:pl-6 md:pr-8">
                   <div className="bg-[#C0840B] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0 my-[15px]">
                     <BsStars className="text-white text-xl" />
                   </div>
-                  <div className="flex flex-col md:flex-row md:items-center pb-[15px]">
-                    <strong className="text-2xl md:pb-[15px]  md:text-3xl">Personal Stories</strong>
-                    <span className={`${sora.className} text-[#555555] md:pl-2`}>(real & raw)</span>
+                  <div className="flex flex-col md:items-start pb-[15px]">
+                    <strong className="text-2xl md:pb-[15px]  md:text-3xl">Unfiltered Moments</strong>
+                    <span className={`${sora.className} text-[#555555]`}>Raw, lived and unfiltered experiences that fully mirror your own.</span>
                   </div>
                 </li>
                 <li className="rounded bg-[#F9F5EE] pl-4 pr-4 text-left md:pl-6 md:pr-8"><div className="bg-[#C0840B] rounded-2xl w-10 h-10 flex items-center justify-center flex-shrink-0 my-[15px]">
                   <FiSunset className="text-white text-xl" />
                 </div>
-                  <div className="flex flex-col md:flex-row md:items-center pb-[15px]">
-                    <strong className="text-2xl md:pb-[15px] md:text-3xl">Lesson On Renewal</strong>
-                    <span className={`${sora.className} text-[#555555] md:pl-2`}>(for every season)</span>
+                  <div className="flex flex-col md:items-start pb-[15px]">
+                    <strong className="text-2xl md:pb-[15px] md:text-3xl">Embracing New Seasons</strong>
+                    <span className={`${sora.className} text-[#555555]`}>Actionable steps on finding fresh purpose and peace while walking through life’s transitions.</span>
                   </div>
                 </li>
               </ul>
@@ -242,92 +246,14 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
           </div>
         </section>
 
-        <section id="review" className="w-full mb-10 bg-[#F9F5EE] px-4 py-12 text-center md:px-[10%] md:py-[10%]">
-          <div className="mx-auto flex max-w-5xl flex-col items-center">
-            {/* Author Image */}
-
-            {/* Message */}
-            <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#1B5E35]`}>A REVIEWER’S TAKE</h2>
-            <div className="w-full px-0 md:px-[10%]">
-              <h3 className={`${fruances.className} italic text-[18px] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}>In The Words Of  A Reader</h3>
-              <p className={` ${sora.className} mx-auto max-w-xs text-sm leading-6 text-[#555555] md:text-base`}>
-                An honest, first-person look at the story behind New Dawn, Same Fire.
-              </p>
-            </div>
-
-          </div>
-
-          <div className="grid grid-cols-1 md:flex md:flex-row md:items-stretch gap-8 pt-10  ">
-            <div className="hidden md:flex md:order-2 flex justify-center items-center self-start">
-              <Image
-                src="/kemi.png"
-                alt="New Dawn, Same Fire"
-                className="h-[379px] max-w-full rounded-xl object-cover object-center"
-                width={285}
-                height={379}
-              />
-            </div>
-            <div className="md:order-3 items-stretch flex justify-center max-w-xl items-center self-start">
-              <Image
-                src="/kemi_new_dawn.png"
-                alt="New Dawn, Same Fire"
-                className="h-[379px] max-w-full rounded-xl object-cover object-center"
-                width={400}
-                height={379}
-              />
-            </div>
-            <div id="story" className="bg-[#FFFFFF] shadow-lg rounded-2xl p-3 flex flex-col md:col-span-2 items-center md:h-[385px] md:w-[625px] md:order-1" style={{ padding: "14px 19px 21px 20px", gap: "13px" }}>
-              <div className="bg-[#F5F5F5] w-full justify-center rounded-xl p-3 text-center md:px-[10%]">
-                <h3 className={`${fruances.className} italic text-sm font-bold md:text-xl`}>
-                  "A conversation with a soul that refused to stay down."</h3>
-              </div>
-              <div className="bg-[#F5F5F5] rounded-xl p-3 text-start flex-1 md:h-0 overflow-y-auto">
-                <p className={` ${sora.className} text-sm leading-relaxed text-[#555555] md:text-base`}>
-                  New Dawn, Same Fire: A Journey of Unfiltered Grace takes you through the world of corporate boardrooms and the quiet, heavy moments of a home held together by faith and resolve.
-                  On its pages you feel the weight of every pillar that stood firm and the courage behind every support that changed it all. At the very heart of this journey is a celebration of the woman who started it all: the author's mother. This book beautifully
-                  {!expanded && "..."}
-                  {expanded && (
-                    <>
-                      {" "}honors the woman who... didn't just raise a daughter, but mentored a visionary, passing down the sharp business instincts and the moral gauge that define her today. It captures that selfless season when, while the author served on official duty in Abuja, her mother stayed behind as a steady support.
-                      That strength is mirrored in her husband, the Chairman of First Tricon Limited, a consulting, investment and development organisation with roots and reach across Africa. She celebrates him, not only with a story that makes the book un-put-down-able, but also describes him as her Faith in Action Partner — the unwavering support system that allowed her to reach for the stars.
-                      Look forward to the special section on experiential boardroom lessons for the younger generation of career women. Stay a while on the page where the 60-year-old author pens a letter to her teenage self. Mind-shifting — in my opinion, it's an exercise we all should do from time to time.
-                      In this book, you see consistency in the fruit of a life lived with purpose. It is a powerful reminder of the leverage that comes with giving generously to man and God. As it starts to make a landing, the pages showcase why retirement shouldn't be an ending but rather a new beginning — her new role as Executive Vice Chairman at First Tricon Limited, her fledgling textile manufacturing venture, and a chance to further take her love for women and youth empowerment to the next level.
-                      This book is a roadmap of many sorts for anyone who believes that their best chapters are still being written, and that a true legacy is built one faithful, family-centered step at a time. Welcome to Kemi's world of Faith, Family and Factory.
-                    </>
-                  )}
-
-                </p>
-                {/* Toggle Link */}
-                <button
-                  onClick={() => { setExpanded(!expanded);
-                    if (expanded) {
-                      // when collapsing, scroll back to the section top
-                      const section = document.getElementById("story");
-                      section?.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                  className={` ${sora.className} mt-4 flex gap-2 text-[#C0840B] text-sm hover:underline font-medium hover:underline`}
-                >
-                  {expanded ? "Show Less" : "Read Full Review"}
-                  {expanded ? (
-                    <FaChevronUp className="text-sm relative top-[2px]" />
-                  ) : (
-                    <FaChevronDown className="text-sm relative top-[2px]" />
-                  )}
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="w-full bg-[#240406] mb-10 px-4 py-12 text-center md:px-[10%] md:py-[10%]">
           <div id="qr-section" className="mx-auto flex max-w-5xl flex-col items-center">
-            <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#7CD9A0]`}>YOUR EXCLUSIVE GIFT</h2>
+            <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#7CD9A0]`}>GET STARTED</h2>
             <div className="w-full px-0 text-center md:px-[10%]">
               <h3 className={`${fruances.className} text-[18px] leading-[38px] md:mb-4 md:text-[36px] text-[#E6E6E6] md:leading-[54px]`}>
-                <i>An Exclusive Gift For Our Distinguished Guests.</i>
+                <i>Choose Your Copy</i>
               </h3>
-              <p className={`${sora.className} mx-auto mb-8 max-w-2xl text-sm leading-6 text-[#E6E6E6] md:text-base`}>Choose how you’d like to experience the book.</p>
+              <p className={`${sora.className} mx-auto mb-8 max-w-2xl text-sm leading-6 text-white/70 md:text-base`}>Whether you prefer reading digitally or holding a printed copy, choose the format that works best for you.</p>
             </div>
           </div>
 
@@ -338,24 +264,23 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
                 <TbDownload className="text-white text-xl" />
               </div>
               <h3 className={`${fruances.className} text-lg my-4 md:text-xl`}>Download Your free Digital Copy</h3>
-              <p className={`${sora.className} md:hidden text-base mb-4 text-[#555555] md:text-lg`}>As a guest of this celebration, you have exclusive access to the digital edition.</p>
-              <p className={`${sora.className} hidden md:block text-base mb-4 text-[#555555] md:text-lg`}>Scan the QR code to instantly access your digital copy</p>
-              <div className=" hidden md:flex mx-auto aspect-[283/270] w-full max-w-[283px] items-center justify-center rounded-[8px] border-[3px] border-[#240406] bg-white px-[18px] py-[14px] md:px-[28px]">
+              <p className={`${sora.className} text-base mb-4 text-[#555555] md:text-lg`}>As a guest of this celebration, you have exclusive access to the digital edition.</p>
+              {/* <div className=" hidden md:flex mx-auto aspect-[283/270] w-full max-w-[283px] items-center justify-center rounded-[8px] border-[3px] border-[#240406] bg-white px-[18px] py-[14px] md:px-[28px]">
                 <QRCode
                   value={pdfUrl}
                   size={220}
                   fgColor="#240406"
                   bgColor="#FFFFFF"
                 />
-              </div>
-              <div className="md:hidden">
-              <ul className="text-gray-600 mb-6">
-                <li className="flex items-center gap-x-2 mb-2"><span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Instant Access</span></li>
-                <li className="flex items-center gap-x-2 mb-2"><span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>PDF Format</span></li>
+              </div> */}
+              <div>
+                <ul className="text-gray-600 mb-6">
+                  <li className="flex items-center gap-x-2 mb-2"><span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Instant Access</span></li>
+                  <li className="flex items-center gap-x-2 mb-2"><span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>PDF Format</span></li>
                   <li className="flex items-center gap-x-2 mb-2"><span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Mobile Friendly</span></li>
                   <li className="flex items-center gap-x-2 mb-2"> <span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Read Anywhere</span></li>
                 </ul>
-                <a href="https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf" className={`${fruances.className} bg-[#C0840B] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7`}>
+                <a href="https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf" className={`${fruances.className} bg-[#240406] flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7`}>
                   <span><TbDownload /></span><span className="text-[#FFFFFF]">Download Free Soft Copy</span>
                 </a>
               </div>
@@ -374,7 +299,7 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
                 <li className="flex items-center gap-x-2 mb-2"><span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Collectible Edition</span></li>
                 <li className="flex items-center gap-x-2 mb-2"> <span className=" text-[#1B5E35]"><IoIosCheckmarkCircle /></span><span>Gift Option</span></li>
               </ul>
-              <a type="button" onClick={openRequestModal} className={`${fruances.className} mt-auto flex w-full items-center justify-center gap-4 rounded bg-[#260406] px-5 py-4 text-white md:h-[64px] md:w-auto md:px-7`}>
+              <a type="button" onClick={openRequestModal} className={`${fruances.className} mt-auto flex w-full items-center justify-center gap-4 rounded bg-[#C0840B1A] border border-[#C0840B4D] px-5 py-4 text-[#280506] md:h-[64px] md:w-auto md:px-7`}>
                 <span className="text-xl"><GiOpenBook /></span>
                 <span>Request A Free Hard Copy</span>
               </a>
@@ -382,14 +307,15 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
           </div>
 
         </section>
+
         <section id="books" className="w-full mb-10 bg-white px-4 py-12 text-center md:px-[10%] md:py-[10%]">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
             {/* Author Image */}
 
             {/* Message */}
-            <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#1B5E35]`}>MORE BOOKS</h2>
+            <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#1B5E35]`}>OTHER BOOKS</h2>
             <div className="w-full px-0 md:px-[10%]">
-              <h3 className={`${fruances.className} italic text-[18px] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}>More from Kemi Olumuyiwa</h3>
+              <h3 className={`${fruances.className} italic text-[18px] text-[#260406] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}>More from Kemi Olumuyiwa</h3>
               <p className={` ${sora.className} mx-auto max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
                 A collection of books that continue to inspire growth, purpose and meaningful living.
               </p>
@@ -433,6 +359,76 @@ const reviews   = useCountUp(16020, 1500, hasAnimated);
                 <p className={` ${sora.className} text-sm leading-6 text-[#555555] md:text-base`}>
                   Celebrating life, love and grace
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="review" className="w-full mb-10 bg-[#F9F5EE] px-4 py-12 text-center md:px-[10%] md:py-[10%]">
+          <div className="mx-auto flex max-w-5xl flex-col items-center">
+            {/* Author Image */}
+
+            {/* Message */}
+            <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#1B5E35]`}>REVIEWS</h2>
+            <div className="w-full px-0 md:px-[10%]">
+              <h3 className={`${fruances.className} italic text-[18px] text-[#260406] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}>What Readers Are Saying</h3>
+              <p className={` ${sora.className} mx-auto max-w-xs text-sm leading-6 text-[#555555] md:text-base`}>
+                An honest, first-person look at the story behind New Dawn, Same Fire.
+              </p>
+            </div>
+
+          </div>
+
+          <div className="grid grid-cols-1 md:flex md:flex-row md:items-stretch gap-8 pt-10  ">
+            <div className="md:order-3 items-stretch flex justify-center max-w-xl items-center self-start">
+              <Image
+                src="/kemi_new_dawn.png"
+                alt="New Dawn, Same Fire"
+                className="h-[379px] max-w-full rounded-xl object-cover object-center"
+                width={400}
+                height={379}
+              />
+            </div>
+            <div id="story" className="bg-[#FFFFFF] shadow-lg rounded-2xl p-3 flex flex-col md:col-span-2 items-center md:h-[385px] md:w-[625px] md:order-1" style={{ padding: "14px 19px 21px 20px", gap: "13px" }}>
+              <div className="bg-[#F5F5F5] w-full justify-center rounded-xl p-3 text-center md:px-[10%]">
+                <h3 className={`${fruances.className} italic text-sm font-bold md:text-xl`}>
+                  "A conversation with a soul that refused to stay down."</h3>
+              </div>
+              <div className="bg-[#F5F5F5] rounded-xl p-3 text-start flex-1 md:h-0 overflow-y-auto">
+                <p className={` ${sora.className} text-sm leading-relaxed text-[#555555] md:text-base`}>
+                  New Dawn, Same Fire: A Journey of Unfiltered Grace takes you through the world of corporate boardrooms and the quiet, heavy moments of a home held together by faith and resolve.
+                  On its pages you feel the weight of every pillar that stood firm and the courage behind every support that changed it all. At the very heart of this journey is a celebration of the woman who started it all: the author's mother. This book beautifully
+                  {!expanded && "..."}
+                  {expanded && (
+                    <>
+                      {" "}honors the woman who... didn't just raise a daughter, but mentored a visionary, passing down the sharp business instincts and the moral gauge that define her today. It captures that selfless season when, while the author served on official duty in Abuja, her mother stayed behind as a steady support.
+                      That strength is mirrored in her husband, the Chairman of First Tricon Limited, a consulting, investment and development organisation with roots and reach across Africa. She celebrates him, not only with a story that makes the book un-put-down-able, but also describes him as her Faith in Action Partner — the unwavering support system that allowed her to reach for the stars.
+                      Look forward to the special section on experiential boardroom lessons for the younger generation of career women. Stay a while on the page where the 60-year-old author pens a letter to her teenage self. Mind-shifting — in my opinion, it's an exercise we all should do from time to time.
+                      In this book, you see consistency in the fruit of a life lived with purpose. It is a powerful reminder of the leverage that comes with giving generously to man and God. As it starts to make a landing, the pages showcase why retirement shouldn't be an ending but rather a new beginning — her new role as Executive Vice Chairman at First Tricon Limited, her fledgling textile manufacturing venture, and a chance to further take her love for women and youth empowerment to the next level.
+                      This book is a roadmap of many sorts for anyone who believes that their best chapters are still being written, and that a true legacy is built one faithful, family-centered step at a time. Welcome to Kemi's world of Faith, Family and Factory.
+                    </>
+                  )}
+
+                </p>
+                {/* Toggle Link */}
+                <button
+                  onClick={() => {
+                    setExpanded(!expanded);
+                    if (expanded) {
+                      // when collapsing, scroll back to the section top
+                      const section = document.getElementById("story");
+                      section?.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                  className={` ${sora.className} mt-4 flex gap-2 text-[#C0840B] text-sm hover:underline font-medium hover:underline`}
+                >
+                  {expanded ? "Show Less" : "Read Full Review"}
+                  {expanded ? (
+                    <FaChevronUp className="text-sm relative top-[2px]" />
+                  ) : (
+                    <FaChevronDown className="text-sm relative top-[2px]" />
+                  )}
+                </button>
               </div>
             </div>
           </div>
