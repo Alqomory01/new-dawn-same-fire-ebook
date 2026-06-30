@@ -153,7 +153,7 @@ export default function Home() {
         <div className="px-4 text-center md:px-0">
           <h1 className={`${fruances.className} text-2xl leading-[44px] font-semibold text-center md:text-[72px] md:leading-[72px]`}><span className="text-[#280506]">NEW DAWN,</span> <span className="text-[#C0840B]"><i>SAME FIRE</i></span></h1>
           <p className={`${sora.className} mx-auto mt-2 max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
-            Thank you for being part of this special celebration. As a token of appreciation, please enjoy this complimentary copy of New Dawn, Same Fire.
+            The words you need today might be waiting on the very next page—claim your free copy and start reading today.
           </p>
         </div>
 
@@ -610,7 +610,7 @@ export default function Home() {
                 <Image
                   src="/mutajero_gbeminiyi.jpg"
                   alt="Mutajero Gbeminiyi"
-                  className="h-full w-full object-cover object-top"
+                  className="h-full w-full object-cover object-center"
                   width={601}
                   height={760}
                 />
