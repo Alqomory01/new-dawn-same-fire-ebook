@@ -9,8 +9,9 @@ import { TbDownload } from "react-icons/tb";
 import { Dancing_Script } from "next/font/google"
 import { Fraunces } from "next/font/google"
 import { Sora } from "next/font/google"
-import { IoIosStar } from "react-icons/io";
-import { GiRoundStar } from "react-icons/gi";
+import { FaStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
+import { PiQuotesFill } from "react-icons/pi";
 import { MdQrCodeScanner } from "react-icons/md";
 import { FaChevronUp } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa6";
@@ -185,7 +186,7 @@ export default function Home() {
             <div>
               <div className="flex items-center justify-center gap-1">
                 <h2 className={`${fruances.className} text-2xl font-normal text-[#FFEECC] md:text-[56px] md:leading-[84px]`}>{hasAnimated ? `${reviews.toLocaleString()}+` : "4.8"}</h2>
-                <span className="text-[#FFEECC] text-sm md:text-2xl"><GiRoundStar /></span>
+                <span className="text-[#FFEECC] text-sm md:text-2xl"><FaStar /></span>
               </div>
               <p className={`${sora.className} text-[11px] text-[#E6E6E6] md:text-[18px] md:leading-[27px]`}>Average Rating</p>
             </div>
@@ -342,7 +343,7 @@ export default function Home() {
               <div className="px-0 text-center md:px-[10%]">
                 <h3 className={`${fruances.className} text-xl leading-[38px] font-bold md:text-3xl md:leading-[54px]`}>Married to My Role Model </h3>
                 <p className={` ${sora.className} text-sm leading-6 text-[#555555] md:text-base`}>
-                  Faith-filled encouragement to rise above life’s challenges
+                  Married to My Role Model is a faith-filled and inspiring book that encourages readers to rise above life's challenges through unwavering trust in God. With a foreword by Pastor Mrs. Folu Adebayo of RCCG, the book celebrates God's faithfulness, the beauty of a strong marriage, spiritual partnership, and the importance of family. Through personal experiences and practical life lessons, Kemi Olumuyiwa inspires readers to build resilient relationships and live purposefully with God at the center.
                 </p>
               </div>
             </div>
@@ -357,7 +358,7 @@ export default function Home() {
               <div className="justify-center px-0 text-center md:px-[10%]">
                 <h3 className={`${fruances.className} text-xl leading-[38px] font-bold md:text-3xl md:leading-[54px]`}>Lifted</h3>
                 <p className={` ${sora.className} text-sm leading-6 text-[#555555] md:text-base`}>
-                  Celebrating life, love and grace
+                  Lifted is a heartfelt celebration of Kemi Olumuyiwa's life, love, and journey of grace up to her 50th birthday. In this inspiring book, she reflects on the challenges she has overcome, the victories she has experienced, and the lessons God has taught her along the way. Her story encourages readers to embrace faith, persevere through life's difficulties, and recognize that with God by their side, no obstacle is insurmountable.
                 </p>
               </div>
             </div>
@@ -376,61 +377,134 @@ export default function Home() {
                 An honest, first-person look at the story behind New Dawn, Same Fire.
               </p>
             </div>
-
           </div>
 
-          <div className="grid grid-cols-1 md:flex md:flex-row md:items-stretch gap-8 pt-10  ">
-            <div className="md:order-3 items-stretch flex justify-center max-w-xl items-center self-start">
+          <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] md:items-stretch gap-4 pt-10">
+            <div className="md:order-3 items-stretch flex justify-center max-w-full self-stretch w-full">
               <Image
                 src="/kemi_new_dawn.png"
                 alt="New Dawn, Same Fire"
                 className="h-[379px] max-w-full rounded-xl object-cover object-center"
-                width={400}
+                width={495}
                 height={379}
               />
             </div>
-            <div id="story" className="bg-[#FFFFFF] shadow-lg rounded-2xl p-3 flex flex-col md:col-span-2 items-center md:h-[385px] md:w-[625px] md:order-1" style={{ padding: "14px 19px 21px 20px", gap: "13px" }}>
-              <div className="bg-[#F5F5F5] w-full justify-center rounded-xl p-3 text-center md:px-[10%]">
-                <h3 className={`${fruances.className} italic text-sm font-bold md:text-xl`}>
-                  "A conversation with a soul that refused to stay down."</h3>
+            <div id="story" className="bg-[#FFFFFF] shadow-lg rounded-2xl p-3 flex flex-col justify-between items-center md:order-1" style={{ padding: "18px 13px 25px 20px", gap: "10px" }}>
+              <div className="bg-[#FFFFFF] rounded-xl flex items-center justify-between w-full py-3">
+                <div className="flex gap-1 items-start">
+                  <span className="text-[#EFB94C]"><FaStar /></span>
+                  <span className="text-[#EFB94C]"><FaStar /></span>
+                  <span className="text-[#EFB94C]"><FaStar /></span>
+                  <span className="text-[#555555CC]"><FaRegStar /></span>
+                  <span className="text-[#555555CC]"><FaRegStar /></span>
+                </div>
+                < PiQuotesFill className="text-[#C0840B26] text-3xl"/>
               </div>
-              <div className="bg-[#F5F5F5] rounded-xl p-3 text-start flex-1 md:h-0 overflow-y-auto">
-                <p className={` ${sora.className} text-sm leading-relaxed text-[#555555] md:text-base`}>
-                  New Dawn, Same Fire: A Journey of Unfiltered Grace takes you through the world of corporate boardrooms and the quiet, heavy moments of a home held together by faith and resolve.
-                  On its pages you feel the weight of every pillar that stood firm and the courage behind every support that changed it all. At the very heart of this journey is a celebration of the woman who started it all: the author's mother. This book beautifully
-                  {!expanded && "..."}
-                  {expanded && (
-                    <>
-                      {" "}honors the woman who... didn't just raise a daughter, but mentored a visionary, passing down the sharp business instincts and the moral gauge that define her today. It captures that selfless season when, while the author served on official duty in Abuja, her mother stayed behind as a steady support.
-                      That strength is mirrored in her husband, the Chairman of First Tricon Limited, a consulting, investment and development organisation with roots and reach across Africa. She celebrates him, not only with a story that makes the book un-put-down-able, but also describes him as her Faith in Action Partner — the unwavering support system that allowed her to reach for the stars.
-                      Look forward to the special section on experiential boardroom lessons for the younger generation of career women. Stay a while on the page where the 60-year-old author pens a letter to her teenage self. Mind-shifting — in my opinion, it's an exercise we all should do from time to time.
-                      In this book, you see consistency in the fruit of a life lived with purpose. It is a powerful reminder of the leverage that comes with giving generously to man and God. As it starts to make a landing, the pages showcase why retirement shouldn't be an ending but rather a new beginning — her new role as Executive Vice Chairman at First Tricon Limited, her fledgling textile manufacturing venture, and a chance to further take her love for women and youth empowerment to the next level.
-                      This book is a roadmap of many sorts for anyone who believes that their best chapters are still being written, and that a true legacy is built one faithful, family-centered step at a time. Welcome to Kemi's world of Faith, Family and Factory.
-                    </>
-                  )}
-
+                <p className={` ${sora.className} text-sm leading-relaxed text-[#555555CC] text-start md:text-base`}>
+                  In my opinion, this is a transformative exercise we should all engage in from time to time. This book consistently reflects the outcomes of a life lived with purpose. It serves as a powerful reminder of the benefits that come from giving generously to both people and God. As the narrative unfolds, it emphasizes that retirement should not be viewed as an end but rather as a new beginning. A great book that I would strongly recommend.
                 </p>
-                {/* Toggle Link */}
-                <button
-                  onClick={() => {
-                    setExpanded(!expanded);
-                    if (expanded) {
-                      // when collapsing, scroll back to the section top
-                      const section = document.getElementById("story");
-                      section?.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                  className={` ${sora.className} mt-4 flex gap-2 text-[#C0840B] text-sm hover:underline font-medium hover:underline`}
-                >
-                  {expanded ? "Show Less" : "Read Full Review"}
-                  {expanded ? (
-                    <FaChevronUp className="text-sm relative top-[2px]" />
-                  ) : (
-                    <FaChevronDown className="text-sm relative top-[2px]" />
-                  )}
-                </button>
+              <div className="flex items-center w-full gap-2 py-4">
+                <Image
+                src="/felix.svg"
+                alt="Felix Babalola"
+                width={44}
+                height={44}
+                />
+                <div className="flex flex-col items-start">
+                  <span className={`${sora.className} text-[#280506CC] text-xl font-semibold`}>Felix Babalola</span>
+                  <span className={`${sora.className} text-[#555555CC] text-sm`}>Verified user</span>
+                </div>
               </div>
             </div>
+            <div id="story" className="bg-[#FFFFFF] shadow-lg rounded-2xl p-3 flex flex-col justify-between items-center md:order-3" style={{ padding: "18px 13px 25px 20px", gap: "10px" }}>
+              <div className="bg-[#FFFFFF] rounded-xl flex items-center justify-between w-full py-3">
+                <div className="flex gap-1 items-start">
+                  <span className="text-[#EFB94C]"><FaStar /></span>
+                  <span className="text-[#EFB94C]"><FaStar /></span>
+                  <span className="text-[#EFB94C]"><FaStar /></span>
+                  <span className="text-[#555555CC]"><FaRegStar /></span>
+                  <span className="text-[#555555CC]"><FaRegStar /></span>
+                </div>
+                < PiQuotesFill className="text-[#C0840B26] text-3xl"/>
+              </div>
+                <p className={` ${sora.className} text-sm leading-relaxed text-[#555555CC] text-start md:text-base`}>
+                  In my opinion, this is a transformative exercise we should all engage in from time to time. This book consistently reflects the outcomes of a life lived with purpose. It serves as a powerful reminder of the benefits that come from giving generously to both people and God. As the narrative unfolds, it emphasizes that retirement should not be viewed as an end but rather as a new beginning. A great book that I would strongly recommend.
+                </p>
+              <div className="flex items-center w-full gap-2 py-4">
+                <Image
+                src="/sarah.svg"
+                alt="Sarah Pollen"
+                width={44}
+                height={44}
+                />
+                <div className="flex flex-col items-start">
+                  <span className={`${sora.className} text-[#280506CC] text-xl font-semibold`}>Sarah Pollen</span>
+                  <span className={`${sora.className} text-[#555555CC] text-sm`}>Verified user</span>
+                </div>
+              </div>
+            </div>
+            <div id="story" className="bg-[#FFFFFF] shadow-lg rounded-2xl p-3 flex flex-col justify-between items-center md:order-3" style={{ padding: "18px 13px 25px 20px", gap: "10px" }}>
+              <div className="bg-[#FFFFFF] rounded-xl flex items-center justify-between w-full py-3">
+                <div className="flex gap-1 items-start">
+                  <span className="text-[#EFB94C]"><FaStar /></span>
+                  <span className="text-[#EFB94C]"><FaStar /></span>
+                  <span className="text-[#EFB94C]"><FaStar /></span>
+                  <span className="text-[#EFB94C]"><FaStar /></span>
+                  <span className="text-[#EFB94C]"><FaStar /></span>
+                </div>
+                < PiQuotesFill className="text-[#C0840B26] text-3xl"/>
+              </div>
+                <p className={` ${sora.className} text-sm leading-relaxed text-[#555555CC] text-start md:text-base`}>
+                  This book serves as a roadmap for anyone who believes their best chapters are still ahead of them and that a true legacy is built through consistent, family-centred actions. Welcome to Kemi's world of faith, family, and industry.
+                </p>
+              <div className="flex items-center w-full gap-2 py-4">
+                <Image
+                src="/cherry.svg"
+                alt="Cherry Oladele"
+                width={44}
+                height={44}
+                />
+                <div className="flex flex-col items-start">
+                  <span className={`${sora.className} text-[#280506CC] text-xl font-semibold`}>Cherry Oladele</span>
+                  <span className={`${sora.className} text-[#555555CC] text-sm`}>Verified user</span>
+                </div>
+              </div>
+            </div>
+            <div id="story" className="bg-[#FFFFFF] shadow-lg rounded-2xl p-3 flex flex-col justify-between md:col-span-2 items-center md:w-full md:order-3" style={{ padding: "18px 13px 25px 20px", gap: "10px" }}>
+              <div className="bg-[#FFFFFF] rounded-xl flex items-center justify-between w-full py-3">
+                <div className="flex gap-1 items-start">
+                  <span className="text-[#EFB94C]"><FaStar /></span>
+                  <span className="text-[#EFB94C]"><FaStar /></span>
+                  <span className="text-[#EFB94C]"><FaStar /></span>
+                  <span className="text-[#555555CC]"><FaRegStar /></span>
+                  <span className="text-[#555555CC]"><FaRegStar /></span>
+                </div>
+                < PiQuotesFill className="text-[#C0840B26] text-3xl"/>
+              </div>
+                <p className={` ${sora.className} text-sm leading-relaxed text-[#555555CC] text-start md:text-base`}>
+                  New Dawn, Same Fire: A Journey of Unfiltered Grace takes you through the world of corporate boardrooms and the quiet, heavy moments of a home held together by faith and resolve. On its pages you feel the weight of every pillar that stood firm and the courage behind every support that changed it all. At the very heart of this journey is a celebration of the woman who started it all: the author's mother. This book beautifully honours the woman who... didn't just raise a daughter, but mentored a visionary, passing down the sharp business instincts and the moral gauge that define her today. Look forward to the special section on experiential boardroom lessons for the younger generation of career women.
+                </p>
+              <div className="flex items-center w-full gap-2 py-4">
+                <Image
+                src="/sola.svg"
+                alt="Sola Sanni"
+                width={44}
+                height={44}
+                />
+                <div className="flex flex-col items-start">
+                  <span className={`${sora.className} text-[#280506CC] text-xl font-semibold`}>Sola Sanni</span>
+                  <span className={`${sora.className} text-[#555555CC] text-sm`}>Verified user</span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <div className="w-full px-0 md:px-[10%] mt-[10%]">
+            <h3 className={`${fruances.className} italic text-[18px] text-[#260406] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}>Inspired by what readers are saying?</h3>
+            <p className={` ${sora.className} mx-auto max-w-xs text-sm leading-6 text-[#555555] md:text-base`}>
+              Download your free copy and discover why readers are recommending <span className="text-[#C0840B] text-semibold">New Dawn, Same Fire.</span>
+            </p>
           </div>
         </section>
 
