@@ -88,7 +88,7 @@ export default function Home() {
   return (
     <>
       <header id="home" className={`bg-[#F9F5EE] ${fruances.className} fixed top-0 right-0 left-0 z-50 flex items-center justify-between px-4 py-4 md:hidden`}>
-        <span className={`${dancing.className} text-xl font-bold text-[#280506] italic`}>Kemi Olumuyiwa</span>
+        <a href="#"><span className={`${dancing.className} text-xl font-bold text-[#280506] italic`}>Kemi Olumuyiwa</span></a>
 
         {/* Hamburger toggle */}
         <button
@@ -130,8 +130,8 @@ export default function Home() {
         )}
       </header>
 
-      <header className={` hidden md:flex bg-[#F9F5EE] ${fruances.className} flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:px-20`}>
-        <span className={`${dancing.className} text-xl font-bold text-[#280506] italic`}>Kemi Olumuyiwa</span>
+      <header className={` hidden md:flex bg-[#F9F5EE] ${fruances.className} fixed top-0 right-0 left-0 z-50 flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:px-20`}>
+        <a href="#"><span className={`${dancing.className} text-xl font-bold text-[#280506] italic`}>Kemi Olumuyiwa</span></a>
         <nav className="flex flex-wrap justify-center gap-4 md:flex-1 md:gap-5">
           <Link href="#about" className="text-[#555555]">About</Link>
           <Link href="#books" className="text-[#555555]">Books</Link>
@@ -142,7 +142,7 @@ export default function Home() {
         </a>
       </header>
 
-      <main className="flex flex-col items-center overflow-x-hidden mt-26 md:pt-0">
+      <main className="flex flex-col items-center overflow-x-hidden mt-26 md:mt-40 md:pt-0">
         {/* <div className="mt-8 flex h-[36px] w-fit max-w-[92vw] items-center justify-center gap-[2px] whitespace-nowrap rounded-[30px] border border-[#E5E7EB] bg-white px-[18px] py-[6px] md:mt-10 md:w-[232px] md:px-[25px]">
           <span className={`${dancing.className} text-green-600 italic font-dancing`}>
             Exclusive Access
