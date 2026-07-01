@@ -114,7 +114,7 @@ export default function Home() {
               <Link href="#about">About</Link>
               <Link href="#review">Review</Link>
               <Link href="#books">Books</Link>
-              <Link href="#books">Foundation</Link>
+              <Link href="#legacy">Foundation</Link>
             </nav>
             <a
               href="https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf"
@@ -136,7 +136,7 @@ export default function Home() {
           <Link href="#about" className="text-[#555555] hover:text-[#C0840B]">About</Link>
           <Link href="#books" className="text-[#555555] hover:text-[#C0840B]">Books</Link>
           <Link href="#review" className="text-[#555555] hover:text-[#C0840B]">Review</Link>
-          <Link href="#review" className="text-[#555555] hover:text-[#C0840B]">Foundation</Link>
+          <Link href="#legacy" className="text-[#555555] hover:text-[#C0840B]">Foundation</Link>
         </nav>
         <a href="https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf" className="bg-[#280506] hover:bg-[#280509]/80 flex w-full items-center justify-center gap-4 rounded px-5 py-4 text-white md:w-auto md:px-7">
           <span><TbDownload /></span><span className="text-[#FFFFFF]">Download Free Soft Copy</span>
@@ -642,33 +642,25 @@ export default function Home() {
             <Link href="#about" className="text-[#E6E6E6]/60 hover:text-white">About</Link>
             <Link href="#review" className="text-[#E6E6E6]/60 hover:text-white">Review</Link>
             <Link href="#books" className="text-[#E6E6E6]/60 hover:text-white">Books</Link>
-            <Link href="#books" className="text-[#E6E6E6]/60 hover:text-white">Foundation</Link>
+            <Link href="#legacy" className="text-[#E6E6E6]/60 hover:text-white">Foundation</Link>
           </nav>
 
             <div className="flex gap-x-3 items-center md:justify-start">
-              <p className={`${fruances.className} text-sm md:text-lg text-white/60 italic`}>Click to Follow us on</p>
+              <a href="https://www.linkedin.com/in/kemiolumuyiwa?originalSubdomain=ng" className={`${fruances.className} text-sm md:text-lg text-white/60 hover:text-white italic`}>Click to Follow us on</a>
               <a href="https://www.linkedin.com/in/kemiolumuyiwa?originalSubdomain=ng" aria-label="Linkedin" target="blank">
                 <span><img src="/linkedin.svg" className="size-8" alt="Linkedin" /></span>
               </a>
             </div>
 
-            {/* <div className="flex gap-4 text-2xl mb-8 justify-center md:justify-start">
-            </div> */}
-
         </div>
 
-        <div className="w-full text-5xl mt-8 md:mt-0 md:text-[178px] font-normal text-[#F9F5EE1A] text-center justify-between">
+        <div className="w-full text-5xl md:leading[267px] mt-8 md:text-[178px] font-normal text-[#F9F5EE1A] text-center justify-between">
           <p className={`${fruances.className}`}>Kemi Olumuyiwa</p>
         </div>
 
         {/* Bottom Legal Section */}
         <div className={`${sora.className} w-full mt-8 flex flex-col items-center justify-between gap-4 md:border-t border-[#D9D9D9]/10 pt-4 text-center text-sm text-white/30 md:items-center md:gap-0`}>
-          <p><span className="text-lg items-center">©</span> 2026 New Dawn, Same fire. All rights reserved.</p>
-          {/* <div className="flex gap-4 flex-wrap justify-center border-t border-[#D9D9D9]/10 pt-4 md:border-t-0 md:pt-0">
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms Of Service</a>
-            <a href="/cookies">Cookies Policy</a>
-          </div> */}
+          <p><span className="align-middle text-lg">©</span> 2026 New Dawn, Same fire. All rights reserved.</p>
         </div>
       </footer>
 
