@@ -201,7 +201,7 @@ export default function Home() {
               <h3 className={`${fruances.className} text-[18px] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}>
                 <i>What Is <span>New Dawn, Same Fire</span> About?</i>
               </h3>
-              <p className={`${sora.className} mx-auto mb-8 max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
+              <p className={`${sora.className} mx-auto mb-8 max-w-sm text-sm leading-6 text-[#555555] md:text-base`}>
                 New Dawn, Same Fire is more than a memoir; it is a roadmap for anyone standing at the threshold of a new chapter.
               </p>
             </div>
@@ -318,7 +318,7 @@ export default function Home() {
             <h2 className={`${sora.className} text-sm md:text-xl font-normal text-center md:mb-6 text-[#1B5E35]`}>OTHER BOOKS</h2>
             <div className="w-full px-0 md:px-[10%]">
               <h3 className={`${fruances.className} italic text-[18px] text-[#260406] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}>More from Kemi Olumuyiwa</h3>
-              <p className={` ${sora.className} mx-auto max-w-2xl text-sm leading-6 text-[#555555] md:text-base`}>
+              <p className={` ${sora.className} mx-auto max-w-sm text-sm leading-6 text-[#555555] md:text-base`}>
                 A collection of books that continue to inspire growth, purpose and meaningful living.
               </p>
             </div>
@@ -491,9 +491,14 @@ export default function Home() {
 
           <div className="w-full px-0 md:px-[10%] mt-[10%]">
             <h3 className={`${fruances.className} italic text-[18px] text-[#260406] leading-[38px] md:mb-4 md:text-[36px] md:leading-[54px]`}>Inspired by what readers are saying?</h3>
-            <p className={` ${sora.className} mx-auto max-w-xs text-sm leading-6 text-[#555555] md:text-base`}>
+            <p className={` ${sora.className} mx-auto max-w-2xs md:max-w-xs text-sm leading-6 text-[#555555] md:text-base`}>
               Download your free copy and discover why readers are recommending <span className="text-[#C0840B] text-semibold">New Dawn, Same Fire.</span>
             </p>
+          </div>
+          <div className="flex justify-center text-center mt-4">
+            <a href="https://new-dawn-same-fire-ebook-tau.vercel.app/new-dawn-same-fire.pdf" className={`${fruances.className} bg-[#240406] hover:bg-[#240406]/70 flex items-center mx-auto gap-4 rounded px-5 py-4 text-white md:px-7`}>
+              <span><TbDownload /></span><span className="text-[#FFFFFF]">Download Free Soft Copy</span>
+            </a>
           </div>
         </section>
 
@@ -623,42 +628,47 @@ export default function Home() {
       </main>
       <footer className="bg-[#240406] text-white p-8 md:p-15">
         <div className="flex flex-col items-center justify-between gap-10 md:flex-row md:items-start md:gap-x-12 xl:gap-x-60">
-
           {/* Left Section */}
           <div className="max-w-md flex flex-col items-center text-center md:items-start md:text-left">
-            <p className={` ${sora.className} mb-6 text-sm md:text-xl `}>
-              MOTO Foundation <span className="text-white/70">(Mutajero Oyekan; Teniola Olumuyiwa (MOTO) Foundation)
+            <p className={` ${sora.className} mb-6 text-sm md:text-sm `}>
+              MOTO Foundation <span className="text-white/50">(Mutajero Oyekan; Teniola Olumuyiwa (MOTO) Foundation)
                 is the charity outlet of Mutajero Ventures Ltd, incorporated in April 1993.</span>
             </p>
-            <div className="flex gap-x-3 justify-center md:justify-start">
-              <p className={`${fruances.className} text-sm mb-2 text-white/60 italic`}>Click any of these links to follow us:</p>
-            </div>
-
-            <div className="flex gap-4 text-2xl mb-8 justify-center md:justify-start">
-              <a href="https://instagram.com" aria-label="Instagram"><FaInstagram /></a>
-              <a href="https://facebook.com" aria-label="Facebook"><FaFacebook /></a>
-              <a href="https://x.com" aria-label="X"><FaXTwitter /></a>
-            </div>
           </div>
 
           {/* middles section */}
           <nav className={`${fruances.className} flex flex-col gap-3 flex-1 items-center text-center md:items-start md:text-left justify-center`}>
-            <Link href="#home" className="text-[#E6E6E6]/60">Home</Link>
-            <Link href="#about" className="text-[#E6E6E6]/60">About</Link>
-            <Link href="#review" className="text-[#E6E6E6]/60">Review</Link>
-            <Link href="#books" className="text-[#E6E6E6]/60">Books</Link>
+            <Link href="#home" className="text-[#E6E6E6]/60 hover:text-white">Home</Link>
+            <Link href="#about" className="text-[#E6E6E6]/60 hover:text-white">About</Link>
+            <Link href="#review" className="text-[#E6E6E6]/60 hover:text-white">Review</Link>
+            <Link href="#books" className="text-[#E6E6E6]/60 hover:text-white">Books</Link>
+            <Link href="#books" className="text-[#E6E6E6]/60 hover:text-white">Foundation</Link>
           </nav>
+
+            <div className="flex gap-x-3 items-center md:justify-start">
+              <p className={`${fruances.className} text-sm md:text-lg text-white/60 italic`}>Click to Follow us on</p>
+              <a href="https://www.linkedin.com/in/kemiolumuyiwa?originalSubdomain=ng" aria-label="Linkedin" target="blank">
+                <span><img src="/linkedin.svg" className="size-8" alt="Linkedin" /></span>
+              </a>
+            </div>
+
+            {/* <div className="flex gap-4 text-2xl mb-8 justify-center md:justify-start">
+            </div> */}
 
         </div>
 
+        <div className="w-full text-5xl mt-8 md:mt-0 md:text-[178px] font-normal text-[#F9F5EE1A] text-center justify-between">
+          <p className={`${fruances.className}`}>Kemi Olumuyiwa</p>
+        </div>
+
         {/* Bottom Legal Section */}
-        <div className={`${sora.className} w-full mt-8 flex flex-col items-center justify-between gap-4 md:border-t border-[#D9D9D9]/10 pt-4 text-center text-sm text-white/50 md:flex-row md:items-center md:text-left md:gap-0`}>
-          <p>© 2026 New Dawn, Same fire. All rights reserved.</p>
-          <div className="flex gap-4 flex-wrap justify-center border-t border-[#D9D9D9]/10 pt-4 md:border-t-0 md:pt-0">
+        <div className={`${sora.className} w-full mt-8 flex flex-col items-center justify-between gap-4 md:border-t border-[#D9D9D9]/10 pt-4 text-center text-sm text-white/30 md:items-center md:gap-0`}>
+          <p><span className="text-lg items-center">©</span> 2026 New Dawn, Same fire. All rights reserved.</p>
+          {/* <div className="flex gap-4 flex-wrap justify-center border-t border-[#D9D9D9]/10 pt-4 md:border-t-0 md:pt-0">
             <a href="/privacy">Privacy Policy</a>
             <a href="/terms">Terms Of Service</a>
             <a href="/cookies">Cookies Policy</a>
-          </div>
+          </div> */}
         </div>
       </footer>
 
@@ -710,9 +720,10 @@ export default function Home() {
                 <br />
                 Mama is blessed with six living children, 23 grand-children and 11 great grandchildren, all spread across the globe. She has travelled far and wide across the world, paying a number of visits to some African Countries, the United States of America, the United Kingdom, Switzerland, the Caribbean and a Holy pilgrimage to Israel with the General Overseer of the Redeemed Christian Church of God, Pastor E.A. & Pastor Mrs. Folu Adeboye in 1996. Mama loyalty to the extended family system is evident. She trained children of some of her siblings, some of whom lived with her for very many years. She describes her children as the “success lesson of her existence” “All the problems I have faced in my life have been wiped off by my children and this brings me joy” No doubt, her children have become the underlay; the fabric underneath the layer of her existence.
               </p>
-              <p>
+              <p className=" text-left">
                 <b className={`${sora.className}`}>STITCHING MICRO-CREDIT AND HUMANITARIAN WORK</b>
-                <br />
+              </p>
+              <p>
                 Progressively, Mama opened a major outlet (fondly called shop Iya Dudu) in Lagos where she also sold textile materials in wholesale and retail. Despite her very heavy responsibility, she made it a duty to empower a lot of women in her outlets via training in the rudiments of the business. Apart from economically empowering women through training in textile trade and provision of micro-credit, Mama’s philanthropy was further dyed, when it was incorporated as a Limited Liability Company in April 1993 by her children. It was christened “Mutajero Ventures Ltd” The idea extended the length of her giving beyond market women, to enhance education in her local communities. Till date, Mama with her Trust Fund, an Education Foundation, awards Financial Rewards and Scholarships annually to the best male and female students at the Ogere Community High School in Ogere-Remo, her home town and Oke-Ira Community Grammar School, Ogba-Ikeja, Lagos where she’s resided for the four decades.
               </p>
               <p>
