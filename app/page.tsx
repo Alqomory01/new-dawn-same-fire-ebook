@@ -654,7 +654,7 @@ export default function Home() {
 
         </div>
 
-        <div className="w-full text-5xl md:leading[267px] mt-8 md:text-[178px] font-normal text-[#F9F5EE1A] text-center justify-between">
+        <div className="w-full text-5xl mt-8 md:text-[158px] font-normal text-[#F9F5EE1A] text-center justify-between">
           <p className={`${fruances.className}`}>Kemi Olumuyiwa</p>
         </div>
 
